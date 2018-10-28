@@ -69,7 +69,7 @@ li.active{
 .barraricerca{
 	float:left;
 	position:absolute;
-	top:3%;
+	top:0.5em;
 	right:10%;
 	min-width:10em;
 }
@@ -88,7 +88,7 @@ li.active{
 .utente{
 	max-width:5em;
 	position:absolute;
-	top:3%;
+	top:0.5em;
 	right:2%;
 	}
 /*fine css ricerca*/
