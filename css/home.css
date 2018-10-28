@@ -10,7 +10,7 @@
 	hover-events:none;
 	pointer-events: none;
 	cursor: default;
-	width:8%;
+	width:9%;
 	min-width:100px;
 	float:left;
 }
@@ -91,6 +91,9 @@ li.active{
 	top:0.5em;
 	right:2%;
 	}
+	.inputricerca::placeholder{
+		color:lightgrey;
+	}
 /*fine css ricerca*/
 /*fine css header*/
 /*media queries*/
@@ -107,14 +110,15 @@ li.active{
 			max-height:100%;
 	}
 	 #navbar li{
+		 
 		 padding-bottom:0.2em;
-		 margin-left:5%;
+		 margin-left:20%;
 		 width:100%;
 	 }
 	 
 		.barraricerca{
+			margin-left:7%;
 			position:initial;
-			
 			min-width:10em;
 			max-width:100%;
 			margin-bottom:0.3em;
@@ -129,7 +133,7 @@ li.active{
 	.barraricerca{
 			position:initial;
 			float:left;
-			margin-left:15%;
+			margin-left:20%;
 			width:100%;
 			margin-bottom:0.3em;
 		 }
