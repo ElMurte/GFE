@@ -1,0 +1,113 @@
+orario& operator=(const orario &o ){
+sec=o.ore()*3600 + o.minuti()*60 + o.secondi();
+return *this;
+}
+
+orario(const orario &o):sec(o.ore()*3600 + o.minuti()*60 + o.secondi());
+~orario(){};
+
+
+
+-Moviebreak
+-Comflix
+-spacemovies
+-globalmovies
+-playmovies
+-
+
+
+/*
+#main img{
+	height:200px;
+	width:300px;
+}
+#main .medias {
+	overflow-x:auto;
+	overflow-y:0;
+	display:flex;
+	margin-top:1em;
+	height:220px;
+}
+#main .media img:hover{
+transform:scale(1.15,1.15);
+border:2px solid #ff1b00;
+}
+
+#main .media{
+	padding:0.3em;
+	float:left;
+max-height:200px;
+max-width:300px;
+}
+span.desc{
+	font-size:0.7em;
+	display:none;
+}
+.media span.titolo {
+    position: relative;
+    top: 3em;
+    left: 0.5em;
+    font-size: 2em;
+	display:none;
+}
+.medias::-webkit-scrollbar{
+  display:none;
+}
+/*js*/
+/*
+#main{
+	margin-top:1em;
+}
+#main .menu-wrapper {
+	position: relative;
+	
+	height: 200px; // hide the scroll bar
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#main .menu	{ // hide the scroll bar
+	background: #f3f3f3;
+	box-sizing: border-box;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+#main .menu .item {
+		display: inline-block;
+		width: 300px;
+		height: 200px;
+		margin:0.3%;
+		box-sizing: border-box;
+	}
+#main .paddles {
+}
+#main .paddle {
+	background:black;
+	opacity:0.8;
+	color:White;
+	border-color:transparent;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 3em;
+	font-size:1.5em;
+}
+#main .left-paddle {
+	left: 0;
+}
+#main .right-paddle {
+	right: 0;
+}
+#main .hidden {
+	display: none;
+}
+.tag a{
+	background:#ff1b00;
+	color:white;
+	text-decoration:none;
+	border-radius:0.1em;
+	padding:0.2em;
+}
+*/ 

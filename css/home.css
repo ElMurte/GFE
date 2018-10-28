@@ -1,0 +1,159 @@
+/*css body*/
+*{
+	font-family: 'K2D', sans-serif;
+	background:#141414;
+	color:white;
+}
+/*fine css body*/
+/*inizo css header*/
+#header img{
+	width:8%;
+	min-width:100px;
+	float:left;
+}
+#header{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	min-height:2em;
+	max-height:5em;
+	min-width:100%;
+}
+#header a{
+	text-decoration:none;
+}
+body a{
+		font-size:1.2em;
+		color:white;
+}
+a.login{
+	margin-left:1%;
+	background:#ff1b00;
+	padding:0.1em;
+}
+/*css barra*/
+li.active{
+	
+	font-weight:bold;
+}
+#navbar li.active > a {
+	color:#ff1b00;
+		hover-events:none;
+		pointer-events: none;
+		cursor: default;
+}
+#navbar a:hover{
+	color:#ff1b00;
+	border-bottom:1px solid #ff1b00;
+}
+.sottomenu {
+	position:absolute;
+	left:-100%;
+	top:0;
+    width: 50%;
+    height: 11%;
+}
+#navbar li{
+	list-style-type:none;
+	text-decoration:none;
+	padding:0.1em;
+	float:left;
+	margin-left:1%;
+	margin-top:0;
+	}
+/*fine css BARRANAVIGAZIONE*/
+
+/*inizio css RICERCA*/
+.barraricerca{
+	float:left;
+	position:absolute;
+	top:10px;
+	right:10%;
+	min-width:10em;
+}
+.inputricerca{
+	min-width:6em;
+	max-width:100%;
+	padding:0.1em;
+	font-size:1.2em;
+	border:1px solid white;
+}
+.bottonericerca {
+  border:1px solid white;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+.utente{
+	max-width:5em;
+	position:absolute;
+	top:10px;
+	right:1%;
+	}
+/*fine css ricerca*/
+/*fine css header*/
+/*media queries*/
+@media only screen and (max-width: 290px) {
+	.inputricerca{
+		width:9em;
+	}
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	/*iniziomediaHeader*/
+	#header{
+			
+			max-height:100%;
+	}
+	 #navbar li{
+		 padding-bottom:0.2em;
+		 margin-left:5%;
+		 width:100%;
+	 }
+	 
+		.barraricerca{
+			position:initial;
+			
+			min-width:10em;
+			max-width:100%;
+			margin-bottom:0.3em;
+		}
+		 .bottonericerca{
+			 margin:0;
+		}
+		/*finemediaquerisheader*/
+} 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width:900px) {
+	.barraricerca{
+			position:initial;
+			float:left;
+			margin-left:15%;
+			width:100%;
+			margin-bottom:0.3em;
+		 }
+} 
+/* Medium devices (landscape tablets, 768px and up) 
+@media only screen and (min-width: 768px && max-width:992px) {
+	.barraricerca{
+			position:initial;
+			float:left;
+			width:100%;
+			margin-bottom:0.3em;
+		 }
+} 
+ Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {	
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {
+}*/
+
+/*fine mediaqueries*/
+
+
+
+/*main css home*/
+#main{
+	margin-top:1%;
+}
+/*fine main css home*/
