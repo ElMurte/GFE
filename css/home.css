@@ -7,6 +7,9 @@
 /*fine css body*/
 /*inizo css header*/
 #header img{
+	hover-events:none;
+	pointer-events: none;
+	cursor: default;
 	width:8%;
 	min-width:100px;
 	float:left;
@@ -33,18 +36,17 @@ a.login{
 }
 /*css barra*/
 li.active{
-	
 	font-weight:bold;
 }
 #navbar li.active > a {
-	color:#ff1b00;
+	color:white;
 		hover-events:none;
 		pointer-events: none;
 		cursor: default;
 }
 #navbar a:hover{
+	transition: color 0.2s ease-in;
 	color:#ff1b00;
-	border-bottom:1px solid #ff1b00;
 }
 .sottomenu {
 	position:absolute;
@@ -67,7 +69,7 @@ li.active{
 .barraricerca{
 	float:left;
 	position:absolute;
-	top:10px;
+	top:3%;
 	right:10%;
 	min-width:10em;
 }
@@ -86,8 +88,8 @@ li.active{
 .utente{
 	max-width:5em;
 	position:absolute;
-	top:10px;
-	right:1%;
+	top:3%;
+	right:2%;
 	}
 /*fine css ricerca*/
 /*fine css header*/
@@ -149,7 +151,48 @@ li.active{
 }*/
 
 /*fine mediaqueries*/
+/*inizio footer*/
+.linksfooter a{
+	text-decoration:none;
+}
+.linksfooter li{
+	padding:0.3em;
+}
+.linksfooter{
+	font-size:0.9em;
+	list-style-type:none;
+	float:left;
+	width:33%;
+}
+.social-footer-icons{
+	float:left;
+}
+.social-footer-icons li {
+	padding:0.5em;
+	float:left;
+	list-style-type:none;
+	margin-right: 0;
+}
 
+ .social-footer-icons .fa {
+  font-size: 2em;
+}
+.linksfooter a:hover{
+	color: #ff1b00;
+  transition: color 0.2s ease-in;
+	border-bottom:1px solid #ff1b00;
+}
+.social-footer-icons .fa:hover {
+  color: #ff1b00;
+  transition: color 0.2s ease-in;
+}
+
+#footer{
+	min-width:100%;
+	min-height:100%;
+	margin-top:15em;
+}
+/*fine footer*/
 
 
 /*main css home*/
