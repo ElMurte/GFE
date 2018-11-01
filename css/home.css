@@ -1,206 +1,57 @@
-/*css body*/
-*{
-	font-family: 'K2D', sans-serif;
-	background:#141414;
-	color:white;
-}
-/*fine css body*/
-/*inizo css header*/
-#header img{
-	hover-events:none;
-	pointer-events: none;
-	cursor: default;
-	width:9%;
-	min-width:100px;
+.media{
+	padding:0.9%;
 	float:left;
+	width:18%;
 }
-#header{
-	overflow: hidden;
-	position: fixed;
-	top: 0;
-	min-height:2em;
-	max-height:5em;
-	min-width:100%;
+.media img{
+	max-height:180px;
+	min-width:200px;
+	max-width:280px;
 }
-#header a{
-	text-decoration:none;
-}
-body a{
-		font-size:1.2em;
-		color:white;
-}
-a.login{
-	margin-left:1%;
-	background:#ff1b00;
-	padding:0.1em;
-}
-/*css barra*/
-li.active{
-	font-weight:bold;
-}
-#navbar li.active > a {
-	color:white;
-		hover-events:none;
-		pointer-events: none;
-		cursor: default;
-}
-#navbar a:hover{
-	transition: color 0.2s ease-in;
-	color:#ff1b00;
-}
-.sottomenu {
-	position:absolute;
-	left:-100%;
-	top:0;
-    width: 50%;
-    height: 11%;
-}
-#navbar li{
-	list-style-type:none;
-	text-decoration:none;
-	padding:0.1em;
-	float:left;
-	margin-left:1%;
-	margin-top:0;
-	}
-/*fine css BARRANAVIGAZIONE*/
-
-/*inizio css RICERCA*/
-.barraricerca{
-	float:left;
-	position:absolute;
-	top:0.5em;
-	right:10%;
-	min-width:10em;
-}
-.inputricerca{
-	min-width:6em;
-	max-width:100%;
-	padding:0.1em;
-	font-size:1.2em;
+.media img:hover{
+	transform:scale(1.1,1.05);
 	border:1px solid white;
 }
-.bottonericerca {
-  border:1px solid white;
-  cursor: pointer;
-  font-size: 1.2em;
+span.titolo{
+	font-size:1.2em;
 }
-.utente{
-	max-width:5em;
-	position:absolute;
-	top:0.5em;
-	right:2%;
-	}
-	.inputricerca::placeholder{
-		color:lightgrey;
-	}
-/*fine css ricerca*/
-/*fine css header*/
-/*media queries*/
-@media only screen and (max-width: 290px) {
-	.inputricerca{
-		width:9em;
-	}
+.info{
+	margin-top:2%;
+	width:100%;
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-	/*iniziomediaHeader*/
-	#header{
-			
-			max-height:100%;
+.aggiungi{
+	margin-left:1em;
+	float:right;
+	background:#141414;
+	border:2px solid white;
+	border-radius:40%;
 	}
-	 #navbar li{
-		 
-		 padding-bottom:0.2em;
-		 margin-left:20%;
-		 width:100%;
-	 }
-	 
-		.barraricerca{
-			margin-left:7%;
-			position:initial;
-			min-width:10em;
-			max-width:100%;
-			margin-bottom:0.3em;
-		}
-		 .bottonericerca{
-			 margin:0;
-		}
-		/*finemediaquerisheader*/
-} 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+.aggiungi:hover{
+	color:#ff1b00;
+	border-color:#ff1b00;
+}
+.listamedia{
+	float:left;
+	min-width:100%;
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+
+}
+/*inizio mediaqueries home*/
 @media only screen and (min-width: 600px) and (max-width:900px) {
-	.barraricerca{
-			position:initial;
-			float:left;
-			margin-left:20%;
-			width:100%;
-			margin-bottom:0.3em;
-		 }
+
 } 
-/* Medium devices (landscape tablets, 768px and up) 
+/*Medium devices (landscape tablets, 768px and up)*/ 
 @media only screen and (min-width: 768px && max-width:992px) {
-	.barraricerca{
-			position:initial;
-			float:left;
-			width:100%;
-			margin-bottom:0.3em;
-		 }
 } 
- Large devices (laptops/desktops, 992px and up) 
+/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {	
 }
-/* Extra large devices (large laptops and desktops, 1200px and up) 
+/* Extra large devices (large laptops and desktops, 1200px and up)*/ 
 @media only screen and (min-width: 1200px) {
-}*/
-
-/*fine mediaqueries*/
-/*inizio footer*/
-.linksfooter a{
-	text-decoration:none;
 }
-.linksfooter li{
-	padding:0.3em;
-}
-.linksfooter{text-align:center;
-	font-size:0.9em;
-	list-style-type:none;
-	float:left;
-	width:30%;
-}
-.social-footer-icons{
-	float:left;
-}
-.social-footer-icons li {
-	padding:0.5em;
-	float:left;
-	list-style-type:none;
-	margin-right: 0;
-}
-
- .social-footer-icons .fa {
-  font-size: 2em;
-}
-.linksfooter a:hover{
-	color: #ff1b00;
-  transition: color 0.2s ease-in;
-	border-bottom:1px solid #ff1b00;
-}
-.social-footer-icons .fa:hover {
-  color: #ff1b00;
-  transition: color 0.2s ease-in;
-}
-
-#footer{
-	min-width:100%;
-	min-height:100%;
-	margin-top:15em;
-}
-/*fine footer*/
-
-
-/*main css home*/
-#main{
-	margin-top:1%;
-}
-/*fine main css home*/
+/*fine mediaqueries Home*/
