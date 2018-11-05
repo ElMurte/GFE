@@ -39,6 +39,7 @@ li.active{
 	font-weight:bold;
 }
 #navbar li.active > a {
+	font-size:1.4em;
 	color:white;
 		hover-events:none;
 		pointer-events: none;
@@ -208,6 +209,8 @@ li.active{
 }
 
 #footer{
+	float:left;
+	margin-top:5%;
 	width:100%;
 	min-height:100%;
 }
