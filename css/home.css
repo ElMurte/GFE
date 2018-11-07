@@ -1,5 +1,5 @@
 .media{
-	padding:0.9%;
+	padding:0.8%;
 	float:left;
 	width:18%;
 }
@@ -10,7 +10,7 @@
 }
 .media img:hover{
 	transform:scale(1.1,1.05);
-	border:1px solid white;
+	border:2px solid white;
 }
 span.titolo{
 	font-size:1.2em;
@@ -32,7 +32,7 @@ span.titolo{
 }
 .listamedia{
 	float:left;
-	min-width:100%;
+	margin-left:1%;
 }
 
 
