@@ -4,12 +4,7 @@ body{
 	height:100%;
 	width:100%;
 	margin:auto;
-	background: url("background/sfondoLogin.jpg") no-repeat center center fixed;
-	 -moz-background-size: cover;
-	 -webkit-background-size: cover;
-	 -o-background-size: cover;
-	 background-size: cover;
-	
+	background: url("immagini/sfondoLogin.jpg") no-repeat center center fixed;	
 }
 #main img{
 	opacity:0.6;
