@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html>
+<html  lang="en">
 <head>
 <meta charset="UTF-8"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <title>NetMovies-Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet"></link>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 <link rel="stylesheet" type="text/css" href="./css/general.css"></link>
@@ -13,9 +14,9 @@
 <header id="header">
 <div id="logosito"> <a class="active" href="home.html"><img src="./immagini/logo.jpg" alt="Netmovies logo"></img></a></div>
 <div id="navbar">
-		<ul>
-			<li class="active"><a href="home.html">Home</a> </li> 
-			<li class="sottmenuheader"><a href="categorie.html">Categories</a> 
+		<ul id="listamenu">
+			<li class="menulink" ><a href="home.html">Home</a> </li> 
+			<li class="sottmenuheader menulink"><a href="categories.html">Categories</a> 
 				<div class="sottomenu">
 					<ul class="sottomenu">
 					<li><a href="#">Commedy</a></li>
@@ -36,10 +37,16 @@
 					</ul>
 				</div>
 			</li>
-			<li><a href="inarrivo.html">Latest Releases</a> </li>
-			<li><a href="cinema.html">My List</a> </li>
+			<li class="menulink" ><a href="lastest.html">Latest Releases</a> </li>
+			<li class="menulink"><a href="theather.html">My List</a> </li>
 		</ul>
 </div>
+<script>
+$('#listamenu li > a').click(function() {
+    $('#listamenu li').removeClass();
+    $(this).parent().addClass('active');
+});
+  </script>
 <div class="topright">
 <div class="barraricerca">
 <input class="inputricerca" type="text" placeholder="search for title,categories..." title="Input search"></input>
@@ -50,158 +57,115 @@
 </header>
 
 <main id="main">
-<div class="listamedia">
 <h1>Ultime Uscite &rarr; <a href="ultimeuscite.html">Vedi tutte</a></h1>
-<div class="media">
+<div class="tagmedias">
+<ul id="ultimeuscite" class="listamedia">
+<li class="media currentItem">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
+</li>
+<li class="media">
+<a href="media.html"><img class="copertina" src="./immagini/copertina/chappie.jpg"></img></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">Chappie</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
+</li>
+<li class="media">
+<a href="media.html"><img class="copertina" src="./immagini/copertina/lotr.jpg"></img></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">The lord of the rings:The return of the king</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
+</li>
+<li class="media">
+<a href="media.html"><img class="copertina" src="./immagini/copertina/interstellar.jpg"></img></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">Interstellar</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
+</li>
+<li class="media">
+<a href="media.html"><img class="copertina" src="./immagini/copertina/the cloverfield paradox.jpg"></img></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<span class="titolo">The cloverfield Paradox</span>
+<button type="onclick" class="aggiungi">&#43;</button>
 </div>
+</li>
+</ul>
+<button type="onclick" class="scroll left">&lt;
+</button>
+<button type="onclick" class="scroll right">&gt;
+</button>
 </div>
-</div>
-<div class="listamedia">
 <h1>Ultime Uscite &rarr; <a href="ultimeuscite.html">Vedi tutte</a></h1>
-<div class="media">
+<div class="tagmedias">
+<ul class="listamedia">
+<li class="media currentItem">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
+</li>
+<li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
+</li>
+<li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
+</li>
+<li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
-</div>
-<div class="media">
+</li>
+<li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
 <button type="onclick" class="aggiungi">+</button>
 </div>
+</li>
+</ul>
+<button type="onclick" class="scroll left">&lt;
+</button>
+<button type="onclick" class="scroll right">&gt;
+</button>
 </div>
-</div>
-<div class="listamedia">
-<h1>Ultime Uscite &rarr; <a href="ultimeuscite.html">Vedi tutte</a></h1>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-</div>
-<div class="listamedia">
-<h1>Ultime Uscite &rarr; <a href="ultimeuscite.html">Vedi tutte</a></h1>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-<div class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
-</div>
-</div>
-</div>
+    <script>
+// Get the number of pixels scrolled
+        document.addEventListener('DOMContentLoaded', function () {
+			$('.right').on('click', function(){
+			 var curr = $(this).parent().find('.currentItem');
+			 var nxt = $(curr).next();
+			 if($(nxt).length > 0) {
+			    $(curr).toggleClass('currentItem');
+				$(nxt).toggleClass('currentItem');
+			 }
+			});
+			$('.left').on('click', function(){
+			 var curr = $(this).parent().find('.currentItem');
+			 var prev = $(curr).prev();
+			 if($(prev).length > 0) {
+			    $(curr).toggleClass('currentItem');
+				$(prev).toggleClass('currentItem');
+			 }
+			});
+        }, false);
+    </script>
 </main>
 <footer id="footer">
 <ul class="linksfooter">
@@ -223,7 +187,5 @@
     </ul>
 	</div>
 </footer>
-
 </body>
-
 </html>

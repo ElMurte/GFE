@@ -7,14 +7,16 @@
 /*fine css body*/
 /*inizo css header*/
 #header img{
+	margin-left:2%;
+	margin-right:2%;
 	pointer-events: none;
 	cursor: default;
-	width:9%;
+	width:8%;
 	min-width:100px;
 	float:left;
 }
 #header{
-	z-index:100;
+	z-index:1;
 	margin-bottom:5em;
 	overflow: hidden;
 	position: fixed;
@@ -31,22 +33,21 @@ body a{
 		color:white;
 }
 a.login{
+	background:transparent;
 	margin-left:1%;
-	background:#ff1b00;
 	padding:0.1em;
 }
 /*css barra*/
 li.active{
 	font-weight:bold;
 }
-#navbar li.active > a {
-	font-size:1.4em;
+#header li.active > a {
 	color:white;
 		hover-events:none;
 		pointer-events: none;
 		cursor: default;
 }
-#navbar a:hover{
+* a:hover{
 	transition: color 0.2s ease-in;
 	color:#ff1b00;
 }
@@ -60,15 +61,15 @@ li.active{
 #navbar li{
 	list-style-type:none;
 	text-decoration:none;
-	padding:0.1em;
 	float:left;
 	margin-left:1%;
-	margin-top:0;
+	margin-top:0.3%;
 	}
 /*fine css BARRANAVIGAZIONE*/
 
 /*inizio css RICERCA*/
 .barraricerca{
+	margin-top:auto;
 	float:left;
 	position:absolute;
 	top:0.5em;
@@ -85,7 +86,7 @@ li.active{
 .bottonericerca {
   border:1px solid white;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1em;
   padding:0.2em;
 }
 .utente{
@@ -111,7 +112,7 @@ li.active{
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 	/*iniziomediaHeader*/
-	#header{
+	#header{margin:0%;
 			max-height:100%;
 	}
 	 #navbar li{
@@ -134,12 +135,12 @@ li.active{
 		font-size:1.2em;
 					}
 			#main{
-					margin-top:12em;
+					margin-top:13.5em;
 					}
 		/*finemediaquerisheader*/
 } 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width:992px) {
+@media only screen and (min-width: 601px) and (max-width:992px) {
 	.barraricerca{
 			position:initial;
 			float:left;
@@ -151,7 +152,7 @@ li.active{
 			 max-height:100%;
 		 }
 		 #main{
-		margin-top:10%;
+		margin-top:15%;
 		}
 } 
 
@@ -210,8 +211,7 @@ li.active{
 }
 
 #footer{
-	float:left;
-	margin-top:5%;
+	margin-top:2%;
 	width:100%;
 	min-height:100%;
 }
@@ -220,7 +220,6 @@ li.active{
 
 /*main css home*/
 #main{
-	float:left;
 }
 #main h1 a{
 	text-decoration:none;

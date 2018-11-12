@@ -1,49 +1,114 @@
-.media{
-	padding:0.8%;
-	float:left;
-	width:18%;
+ul.listamedia{
+	display:flex;
+list-style-type:none;
+	padding:0;
 }
-.media img{
-	max-height:180px;
-	min-width:200px;
-	max-width:280px;
+li.media{
+	padding-left:0.8%;
+	padding-right:0.8%;
+	width:19%;
 }
-.media img:hover{
+li.media img{
+	height:180px;
+	width:100%;
+}
+li.media img:hover{
 	transform:scale(1.1,1.05);
 	border:2px solid white;
 }
+.info{
+	margin:auto;
+	margin-top:2%;
+}
 span.titolo{
+	margin:auto;
 	font-size:1.2em;
 }
-.info{
-	margin-top:2%;
-	width:100%;
-}
+
 .aggiungi{
-	margin-left:1em;
-	float:right;
+	margin:auto;
+	font-weight:bold;
 	background:#141414;
-	border:2px solid white;
+	border:none;
+	font-size:1.2em;
 	border-radius:40%;
 	}
 .aggiungi:hover{
 	color:#ff1b00;
-	border-color:#ff1b00;
-}
-.listamedia{
-	float:left;
-	margin-left:1%;
 }
 
-
+.scroll{
+	z-index: 0;
+    position: absolute;
+    background: grey;
+    opacity: 0.4;
+	top:25%;
+	border:none;
+    color: White;
+    width: 35px;
+    height: 80px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.left{
+left:0%;
+display:none;
+}
+.right{
+	right:0%;
+	display:none;
+}
+.tagmedias{
+position:relative;
+}
 
 
 @media only screen and (max-width: 600px){
+.media{
+	display:none;
+	transition: display 2s;
+	-webkit-transition:display 2s;
+	}
+	.info{}
+.currentItem{
+	display:inline-block;
+		transition: display 2s;
+	-webkit-transition: display 2s;
+}
+ul.listamedia{
+	min-width:250px;
+	margin:auto;
+	width:70%;
+	overflow-x:auto;
+	-ms-overflow-style: none;
+}
+li.media img:hover{
+transform:none;
+border:none;
+}
+ul.listamedia::-webkit-scrollbar 
+{
+display:none;}
 
+li.media{
+min-width:100%;
+}
+li.media img{
+	max-width:100%;
+}
+.left,.right{
+	display:block;
+}
 }
 /*inizio mediaqueries home*/
-@media only screen and (min-width: 600px) and (max-width:900px) {
-
+@media only screen and (min-width: 601px) and (max-width:900px) {
+ul.listamedia{
+	max-width:100%;
+	overflow:hidden;
+}
+li.media{
+	min-width:200px;
+}
 } 
 /*Medium devices (landscape tablets, 768px and up)*/ 
 @media only screen and (min-width: 768px && max-width:992px) {
@@ -54,4 +119,4 @@ span.titolo{
 /* Extra large devices (large laptops and desktops, 1200px and up)*/ 
 @media only screen and (min-width: 1200px) {
 }
-/*fine mediaqueries Home*/
+/*fine mediaqueries Home*
