@@ -3,11 +3,14 @@
 body{
 	height:100%;
 	width:100%;
-	margin:auto;
-	background: url("immagini/sfondoLogin.jpg") no-repeat center center fixed;	
+	margin:0 0;
+	background: url("../immagini/sfondoLogin.jpg") no-repeat center center fixed;
+	 -webkit-background-size: cover;
+	 background-size: cover;
+	 overflow:hidden;
 }
-#main img{
-	opacity:0.6;
+#main{
+	background:transparent;
 }
 /*div di logo*/
 #logologin{
@@ -21,15 +24,12 @@ body{
 	max-width:480px;
 	margin:0.5% auto;
 }
-
 /*div che contiene tutto il form */
 #form_accedi {
 	min-width:300px;
 	width:33%;
 	color:#FF1B00;
 	margin:2% auto;
-	margin-top:2%;
-
 }
 
 #form_accedi p{
@@ -104,15 +104,7 @@ button:hover {
 		margin:0;
 
 	}
-#form_accedi {
-		margin-top: 5%;
-  }
-
-	.linksfooter{
-		width:20%;
-	}
-
-	input[type=text], input[type=password] {
+	#form_accedi input[type=text],#form_accedi input[type=password] {
 	  width: 95%;
 	 	}
 

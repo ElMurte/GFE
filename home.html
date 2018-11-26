@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
 <head>
 <meta charset="UTF-8"></meta>
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
@@ -11,88 +11,101 @@
 <link rel="stylesheet" type="text/css" href="./css/home.css"></link>
 </head>
 <body>
+<a href="#main" class="nonvedente">Vai al contenuto</a>
 <header id="header">
-<div id="logosito"> <a class="active" href="home.html"><img src="./immagini/logo.jpg" alt="Netmovies logo"></img></a></div>
-<div id="navbar">
-		<ul id="listamenu">
+<div id="logosito"> <a  href="home.html"><img class="logoheader" src="./immagini/logoN.png" alt="Netmovies logo"></img></a></div>
+<div  id="navbar">
+		<ul class="topnav" id="listamenu">
+	
 			<li class="menulink" ><a href="home.html">Home</a> </li> 
-			<li class="sottmenuheader menulink"><a href="categories.html">Categories</a> 
-				<div class="sottomenu">
-					<ul class="sottomenu">
-					<li><a href="#">Commedy</a></li>
+			<li tabindex="0" class="sottmenuheader menulink onclick-menu"> <a href="#sub1" class="submenutoggler">Categories</a>
+					<ul class="onclick-menu-content ilsottomenu" id="sub1">
 					<li><a href="#">Action</a></li>
-					<li><a href="#">Fantasy</a></li>
-					<li><a href="#">Thriller</a></li>
 					<li><a href="#">Adventure</a></li>
-					<li><a href="#">Science</a></li>
-					<li><a href="#">Documentary</a></li>
-					<li><a href="#">Fantascience</a></li>
-					<li><a href="#">Classic</a></li>
-					<li><a href="#">Cartoons</a></li>
-					<li><a href="#">Romantic</a></li>
-					<li><a href="#">Historic</a></li>
 					<li><a href="#">Autobiography</a></li>
+					<li><a href="#">Cartoons</a></li>
+					<li><a href="#">Classic</a></li>
+					<li><a href="#">Commedy</a></li>
+					<li><a href="#">Documentary</a></li>
 					<li><a href="#">Drammatic</a></li>
+					<li><a href="#">Fantascience</a></li>
+					<li><a href="#">Fantasy</a></li>
+					<li><a href="#">Historic</a></li>
+					<li><a href="#">Romantic</a></li>
+					<li><a href="#">Science</a></li>
 					<li><a href="#">Sport</a></li>
+					<li><a href="#">Thriller</a></li>
 					</ul>
-				</div>
 			</li>
 			<li class="menulink" ><a href="lastest.html">Latest Releases</a> </li>
-			<li class="menulink"><a href="theather.html">My List</a> </li>
+			<li class="menulink"><a href="theater.html">My List</a> </li>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+				</a>
 		</ul>
 </div>
 <script>
-$('#listamenu li > a').click(function() {
-    $('#listamenu li').removeClass();
-    $(this).parent().addClass('active');
+var str = window.location.pathname;
+str = str.substring(5,str.length);
+var currLinks = $(`a[href='${str}'`); 
+$(currLinks).each(function( index ) {
+  if(!$( this ).hasClass('current-link'))
+  { $( this ).toggleClass('current-link'); }
 });
-  </script>
+</script>
 <div class="topright">
 <div class="barraricerca">
 <input class="inputricerca" type="text" placeholder="search for title,categories..." title="Input search"></input>
 <button type="submit" class="bottonericerca" title="button search"><i class="fa fa-search"></i></button>
 </div>
-<div class="utente"><a class="login" href="login.html">Login</a></div>
+<div tabindex="0" class="utente utente-menu"><div class="userimage submenutoggler"><img src="./immagini/default.png"/></div>
+<ul class="utente-content ilsottomenu">
+<li><a href="impostazioni.html">Account</a></li>
+<li><a href="logout.html">Logout</a></li>
+</ul>
+</div>
 </div>
 </header>
 
 <main id="main">
-<h1>Ultime Uscite &rarr; <a href="ultimeuscite.html">Vedi tutte</a></h1>
+<noscript class="mobilens">The content can't be scrolled if you disabled the javascript</noscript>
+<h1>Last Releases &rarr; <a href="ultimeuscite.html">see all</a></h1>
 <div class="tagmedias">
 <ul id="ultimeuscite" class="listamedia">
 <li class="media currentItem">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/chappie.jpg"></img></a>
 <div class="info">
 <span class="titolo">Chappie</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/lotr.jpg"></img></a>
 <div class="info">
-<span class="titolo">The lord of the rings:The return of the king</span>
-<button type="onclick" class="aggiungi">+</button>
+<span class="titolo">LOTR:The return of the king</span>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/interstellar.jpg"></img></a>
 <div class="info">
 <span class="titolo">Interstellar</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/the cloverfield paradox.jpg"></img></a>
 <div class="info">
 <span class="titolo">The cloverfield Paradox</span>
-<button type="onclick" class="aggiungi">&#43;</button>
+</div>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button>
 </div>
 </li>
 </ul>
@@ -101,42 +114,52 @@ $('#listamenu li > a').click(function() {
 <button type="onclick" class="scroll right">&gt;
 </button>
 </div>
-<h1>Ultime Uscite &rarr; <a href="ultimeuscite.html">Vedi tutte</a></h1>
+<script>
+function myFunction() {
+    var x = document.getElementById("listamenu");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script> 
+<h1>My list &rarr; <a href="ultimeuscite.html">See my list</a></h1>
 <div class="tagmedias">
 <ul class="listamedia">
 <li class="media currentItem">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"></img></a>
 <div class="info">
 <span class="titolo">Avengers infinity war</span>
-<button type="onclick" class="aggiungi">+</button>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
 </div>
 </li>
 </ul>

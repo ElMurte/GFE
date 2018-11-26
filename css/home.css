@@ -14,19 +14,23 @@ li.media img{
 }
 li.media img:hover{
 	transform:scale(1.1,1.05);
-	border:2px solid white;
+	border:1px solid white;
+	overflow:none;
 }
 .info{
 	margin:auto;
 	margin-top:2%;
 }
 span.titolo{
+	text-align:center;
+	min-width:100%;
 	margin:auto;
 	font-size:1.2em;
 }
-
+.buttons{
+	min-width:100%;
+}
 .aggiungi{
-	margin:auto;
 	font-weight:bold;
 	background:#141414;
 	border:none;
