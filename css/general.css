@@ -51,6 +51,11 @@ a.login{
 	color:#ff1b00;
 }
 /*sottemnuinzio css*/
+ul#sub1 {
+	top:auto;
+    padding: 2%;
+    margin: 0;
+}
 .ilsottomenu{
 	width:40%;
 	position: fixed;
@@ -88,6 +93,7 @@ a.login{
 	color:#ff1b00;
 }
 .current-link {
+	font-weight:bold;
 	color:white;
 		pointer-events: none;
 		cursor: default;
@@ -172,7 +178,7 @@ a.login{
 		font-size:1.2em;
 					}
 			#main{
-					margin-top:15.5em;
+					margin-top:10em;
 					}
 			.ilsottomenu li{
 				min-width:100%;
@@ -181,14 +187,15 @@ a.login{
 				left: 44%;
 			}
 			.submenutoggler:hover + .utente-content,  .utente-content:hover{
-				left: 65%;
+				left: 75%;
+				padding: 1%;
+				width:auto;
 			}
 			.topnav li:not(:first-child) {display: none;}
   .topnav a.icon {
 	  display:block;
 	  position:fixed;
 	  left:13%;
-	  top:9%;
   }
   .topnav.responsive li {
     display: block;
@@ -198,9 +205,6 @@ a.login{
 	  float:left;
   }
 
-}
-.topnav {
-    overflow: hidden;
 }
 .icon{
 	display:none;
@@ -219,9 +223,14 @@ a.login{
 			 max-height:100%;
 		 }
 		 #main{
-		margin-top:15%;
+		margin-top:5.5em;
 		}
-
+				.submenutoggler:hover + .utente-content,  .utente-content:hover{
+				left: 83%;
+				}
+				.ilsottomenu li{
+	min-width:30%;
+} 
 } 
 
 /*Medium devices (landscape tablets, 768px and up)*/ 

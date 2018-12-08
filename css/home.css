@@ -9,13 +9,16 @@ li.media{
 	width:19%;
 }
 li.media img{
-	height:180px;
+	height:60%;
 	width:100%;
 }
 li.media img:hover{
 	transform:scale(1.1,1.05);
 	border:1px solid white;
 	overflow:none;
+}
+span.fa.fa-star.checked {
+    color: #ff1b00;
 }
 .info{
 	margin:auto;
@@ -28,7 +31,12 @@ span.titolo{
 	font-size:1.2em;
 }
 .buttons{
-	min-width:100%;
+	font-size: 1.2em;
+    display: inline;
+}
+.rating {
+    display: inline-flex;
+    margin: 0 1em;
 }
 .aggiungi{
 	font-weight:bold;
@@ -39,36 +47,6 @@ span.titolo{
 	}
 .aggiungi:hover{
 	color:#ff1b00;
-}
-@import "lesshat";
-
-// Method 1) Pure CSS
-.star-ratings-css {
-  unicode-bidi: bidi-override;
-  color: #c5c5c5;
-  font-size: 25px;
-  height: 25px;
-  width: 100px;
-  margin: 0 auto;
-  position: relative;
-  padding: 0;
-  text-shadow: 0px 1px 0 #a2a2a2;
-  
-  &-top {
-    color: #e7711b;
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-  }
-  &-bottom {
-    padding: 0;
-    display: block;
-    z-index: 0;
-  }
 }
 
 .scroll{
@@ -98,6 +76,10 @@ position:relative;
 
 
 @media only screen and (max-width: 600px){
+.mobilens{
+	color:red;
+	display:block;
+}
 .media{
 	display:none;
 	transition: display 2s;
@@ -135,13 +117,13 @@ li.media img{
 }
 }
 /*inizio mediaqueries home*/
-@media only screen and (min-width: 601px) and (max-width:900px) {
+@media only screen and (min-width: 600px) and (max-width:900px) {
 ul.listamedia{
 	max-width:100%;
 	overflow:hidden;
 }
 li.media{
-	min-width:200px;
+	height:100%;
 }
 } 
 /*Medium devices (landscape tablets, 768px and up)*/ 
