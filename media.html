@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
 <head>
-<meta charset="UTF-8"></meta>
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>NetMovies-Home</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel="stylesheet" type="text/css" href="./css/general.css"/>
+<link rel="stylesheet" type="text/css" href="./css/home.css"/>
 <link rel="stylesheet" type="text/css" href="./css/media.css"/>
 </head>
 <body>
-<a href="#main" class="nonvedente">Go to the content</a>
+<a href="#main" class="nonvedente">Vai al contenuto</a>
 <header id="header">
-<div id="logosito"> <a  href="home.html"><img class="logoheader" src="./immagini/logoN.png" alt="Netmovies logo"></img></a></div>
-<div id="navbar">
-		<ul id="listamenu">
+<div id="logosito"> <a  href="home.html"><img class="logoheader" src="./immagini/logoN.png" alt="Netmovies logo"/> </a></div>
+<div  id="navbar">
+		<ul class="topnav" id="listamenu">
+	
 			<li class="menulink" ><a href="home.html">Home</a> </li> 
 			<li tabindex="0" class="sottmenuheader menulink onclick-menu"> <a href="#sub1" class="submenutoggler">Categories</a>
 					<ul class="onclick-menu-content ilsottomenu" id="sub1">
@@ -38,6 +40,9 @@
 			</li>
 			<li class="menulink" ><a href="lastest.html">Latest Releases</a> </li>
 			<li class="menulink"><a href="theater.html">My List</a> </li>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+				</a>
 		</ul>
 </div>
 <script>
@@ -54,7 +59,7 @@ $(currLinks).each(function( index ) {
 <input class="inputricerca" type="text" placeholder="search for title,categories..." title="Input search"></input>
 <button type="submit" class="bottonericerca" title="button search"><i class="fa fa-search"></i></button>
 </div>
-<div tabindex="0" class="utente utente-menu"><div class="userimage submenutoggler"><img src="./immagini/default.png"/></div>
+<div tabindex="0" class="utente utente-menu"><div class="userimage submenutoggler"><img src="./immagini/Userdefault.png"/></div>
 <ul class="utente-content ilsottomenu">
 <li><a href="impostazioni.html">Account</a></li>
 <li><a href="logout.html">Logout</a></li>
@@ -62,6 +67,7 @@ $(currLinks).each(function( index ) {
 </div>
 </div>
 </header>
+
 <main id="main">
 	<div class="vmedia">
 	<h1>title:Chappie year:2014</h1>
@@ -92,6 +98,16 @@ $(currLinks).each(function( index ) {
 			</div>
 		</div>
 </main>
+<script>
+function myFunction() {
+    var x = document.getElementById("listamenu");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script> 
 <footer id="footer">
 <ul class="linksfooter">
 <li><a href="#">The Company</a></li>

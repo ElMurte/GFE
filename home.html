@@ -37,7 +37,7 @@
 					<li><a href="#">Thriller</a></li>
 					</ul>
 			</li>
-			<li class="menulink" ><a href="lastest.html">Latest Releases</a> </li>
+			<li class="menulink" ><a href="simple.html">Latest Releases</a> </li>
 			<li class="menulink"><a href="theater.html">My List</a> </li>
 				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<i class="fa fa-bars"></i>
@@ -45,67 +45,109 @@
 		</ul>
 </div>
 <script>
-var str = window.location.pathname;
-str = str.substring(5,str.length);
-var currLinks = $(`a[href='${str}'`); 
-$(currLinks).each(function( index ) {
-  if(!$( this ).hasClass('current-link'))
-  { $( this ).toggleClass('current-link'); }
+$(document).ready(function() {
+    $("[href]").each(function() {
+        if (this.href == window.location.href) {
+            $(this).addClass("current-link");
+        }
+    });
 });
 </script>
+
 <div class="topright">
 <div class="barraricerca">
 <input class="inputricerca" type="text" placeholder="search for title,categories..." title="Input search"></input>
 <button type="submit" class="bottonericerca" title="button search"><i class="fa fa-search"></i></button>
 </div>
-<div tabindex="0" class="utente utente-menu"><div class="userimage submenutoggler"><img src="./immagini/default.png"/></div>
+<div tabindex="0" class="utente utente-menu"><div class="userimage submenutoggler"><img src="./immagini/Userdefault.png"/></div>
 <ul class="utente-content ilsottomenu">
-<li><a href="impostazioni.html">Account</a></li>
-<li><a href="logout.html">Logout</a></li>
+<li><a href="impostazioni.html">account</a></li>
+<li><a href="logout.html">logout</a></li>
 </ul>
 </div>
 </div>
 </header>
 
 <main id="main">
-<noscript class="mobilens">The content can't be scrolled if you disabled the javascript</noscript>
+<noscript class="mobilens">The content can't be scrolled and the menu is not function is not accessible if you disabled the javascript</noscript>
 <h1>Last Releases &rarr; <a href="ultimeuscite.html">see all</a></h1>
 <div class="tagmedias">
 <ul id="ultimeuscite" class="listamedia">
 <li class="media currentItem">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">Avengers infinity war</span><span class=""></span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
+</footer>
 </div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/chappie.jpg"/></a>
 <div class="info">
 <span class="titolo">Chappie</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</div>
+</footer></div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/lotr.jpg"/> </a>
 <div class="info">
 <span class="titolo">LOTR:The return of the king</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</div>
+</footer></div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/interstellar.jpg"/> </a>
 <div class="info">
 <span class="titolo">Interstellar</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</div>
+</footer></div>
 </li>
 <li class="media">
 <a href="media.html"><img class="copertina" src="./immagini/copertina/the cloverfield paradox.jpg"/> </a>
 <div class="info">
 <span class="titolo">The cloverfield Paradox</span>
-</div>
-<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
+<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
+</footer>
 </div>
 </li>
 </ul>
@@ -126,40 +168,82 @@ function myFunction() {
 </script> 
 <h1>My list &rarr; <a href="ultimeuscite.html">See my list</a></h1>
 <div class="tagmedias">
-<ul class="listamedia">
+<ul id="ultimeuscite" class="listamedia">
 <li class="media currentItem">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/> </a>
+<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">Avengers infinity war</span><span class=""></span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
+</footer>
 </div>
 </li>
 <li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/> </a>
+<a href="media.html"><img class="copertina" src="./immagini/copertina/chappie.jpg"/></a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">Chappie</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</div>
+</footer></div>
 </li>
 <li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/> </a>
+<a href="media.html"><img class="copertina" src="./immagini/copertina/lotr.jpg"/> </a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">LOTR:The return of the king</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</div>
+</footer></div>
 </li>
 <li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/> </a>
+<a href="media.html"><img class="copertina" src="./immagini/copertina/interstellar.jpg"/> </a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">Interstellar</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</div>
+</footer></div>
 </li>
 <li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/> </a>
+<a href="media.html"><img class="copertina" src="./immagini/copertina/the cloverfield paradox.jpg"/> </a>
 <div class="info">
-<span class="titolo">Avengers infinity war</span>
+<span class="titolo">The cloverfield Paradox</span>
+<footer class="mediafooter">
+<span class="durata">2:49 </span>
+<div class="rating">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span></div>
 <div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
+</footer>
 </div>
 </li>
 </ul>
