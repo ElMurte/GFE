@@ -19,119 +19,45 @@
 <h1>Last Releases &rarr; <a href="ultimeuscite.html">see all</a></h1>
 <div class="tagmedias">
 <ul id="ultimeuscite" class="listamedia">
-<li class="media currentItem">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span>
-	<footer class="mediafooter">
-					<span class="durata">2:49 </span>
-			<div class="rating">
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star"></span>
-			</div>
-		<div class="buttons">
-		<button type="onclick" class="aggiungi">&#43;</button>
-		<button type="onclick" class="aggiungi">-</button>
+<?php 
+require_once("./php/connessionedb.php");
+$sci="SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5;";
+ $result=$DB->query($sci);
+if($result->num_rows>0){
+	while($row=$result->fetch_assoc()){
+			$rat=$row["rating"];
+			$norat=5-$row["rating"];
+			echo "
+<li class='media currentItem'>
+			<a href='media.php?m=".rawurlencode($row["idM"])."' title='".rawurlencode($row["title"])."'><img class='copertina' src='./immagini/copertina/".$row["poster"]."'/> </a> 
+<div class='info'>
+				<span class='titolo'>Avengers infinity war</span>
+		<footer class='mediafooter'>
+					<span class='durata'>".$row["ftime"]."</span>
+						<div class='rating'>";
+						while($rat)
+						{
+							echo "<span class='fa fa-star checked'></span>";
+							$rat--;
+						}
+						while($norat)
+							{echo"<span class='fa fa-star'></span>";
+								$norat=$norat-1;
+							};
+					echo"</div>
+		<div class='buttons'>
+		<button type='onclick' class='aggiungi'>&#43;</button>
+		<button type='onclick' class='aggiungi'>-</button>
 		</div>
 	</footer>
 </div>
 </li>
-</ul>
-<button type="onclick" class="scroll left">&lt;
-</button>
-<button type="onclick" class="scroll right">&gt;
-</button>
-</div>
-
-<h1>My list &rarr; <a href="ultimeuscite.html">See my list</a></h1>
-<div class="tagmedias">
-<ul id="ultimeuscite" class="listamedia">
-<li class="media currentItem">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/avengers infinity war.jpg"/></a>
-<div class="info">
-<span class="titolo">Avengers infinity war</span><span class=""></span>
-<footer class="mediafooter">
-<span class="durata">2:49 </span>
-<div class="rating">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span></div>
-<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</footer>
-</div>
-</li>
-<li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/chappie.jpg"/></a>
-<div class="info">
-<span class="titolo">Chappie</span>
-<footer class="mediafooter">
-<span class="durata">2:49 </span>
-<div class="rating">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span></div>
-<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</footer></div>
-</li>
-<li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/lotr.jpg"/> </a>
-<div class="info">
-<span class="titolo">LOTR:The return of the king</span>
-<footer class="mediafooter">
-<span class="durata">2:49 </span>
-<div class="rating">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span></div>
-<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</footer></div>
-</li>
-<li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/interstellar.jpg"/> </a>
-<div class="info">
-<span class="titolo">Interstellar</span>
-<footer class="mediafooter">
-<span class="durata">2:49 </span>
-<div class="rating">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span></div>
-<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</footer></div>
-</li>
-<li class="media">
-<a href="media.html"><img class="copertina" src="./immagini/copertina/the cloverfield paradox.jpg"/> </a>
-<div class="info">
-<span class="titolo">The cloverfield Paradox</span>
-<footer class="mediafooter">
-<span class="durata">2:49 </span>
-<div class="rating">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span></div>
-<div class="buttons"><button type="onclick" class="aggiungi">&#43;</button><button type="onclick" class="aggiungi">-</button></div>
-</footer>
-</div>
-</li>
-</ul>
-<button type="onclick" class="scroll left">&lt;
-</button>
-<button type="onclick" class="scroll right">&gt;
-</button>
-</div>
+";
+	};
+};
+	?>
+	</ul>
+	</div>
 </main>
 <?php include './html/footer.html';?>
 </body>
