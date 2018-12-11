@@ -11,39 +11,7 @@
 <link rel="stylesheet" type="text/css" href="./css/home.css"/>
 </head>
 <body>
-<a href="#main" class="nonvedente">Vai al contenuto</a>
-<header id="header">
-<div id="logosito"> <a  href="home.html"><img class="logoheader" src="./immagini/logoN.png" alt="Netmovies logo"/> </a></div>
-<div  id="navbar">
-		<ul class="topnav" id="listamenu">
-	
-			<li class="menulink" ><a href="home.html">Home</a> </li> 
-			<li tabindex="0" class="sottmenuheader menulink onclick-menu"> <a href="#sub1" class="submenutoggler">Categories</a>
-					<ul class="onclick-menu-content ilsottomenu" id="sub1">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Adventure</a></li>
-					<li><a href="#">Autobiography</a></li>
-					<li><a href="#">Cartoons</a></li>
-					<li><a href="#">Classic</a></li>
-					<li><a href="#">Commedy</a></li>
-					<li><a href="#">Documentary</a></li>
-					<li><a href="#">Drammatic</a></li>
-					<li><a href="#">Fantascience</a></li>
-					<li><a href="#">Fantasy</a></li>
-					<li><a href="#">Historic</a></li>
-					<li><a href="#">Romantic</a></li>
-					<li><a href="#">Science</a></li>
-					<li><a href="#">Sport</a></li>
-					<li><a href="#">Thriller</a></li>
-					</ul>
-			</li>
-			<li class="menulink" ><a href="simple.html">Latest Releases</a> </li>
-			<li class="menulink"><a href="theater.html">My List</a> </li>
-				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-				<i class="fa fa-bars"></i>
-				</a>
-		</ul>
-</div>
+<?php include 'header.html';?>
 <script>
 $(document).ready(function() {
     $("[href]").each(function() {
@@ -53,21 +21,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
-<div class="topright">
-<div class="barraricerca">
-<input class="inputricerca" type="text" placeholder="search for title,categories..." title="Input search"></input>
-<button type="submit" class="bottonericerca" title="button search"><i class="fa fa-search"></i></button>
-</div>
-<div tabindex="0" class="utente utente-menu"><div class="userimage submenutoggler"><img src="./immagini/Userdefault.png"/></div>
-<ul class="utente-content ilsottomenu">
-<li><a href="impostazioni.html">account</a></li>
-<li><a href="logout.html">logout</a></li>
-</ul>
-</div>
-</div>
-</header>
-
 <main id="main">
 <noscript class="mobilens">The content can't be scrolled and the menu is not function is not accessible if you disabled the javascript</noscript>
 <h1>Last Releases &rarr; <a href="ultimeuscite.html">see all</a></h1>
@@ -274,25 +227,6 @@ function myFunction() {
         }, false);
     </script>
 </main>
-<footer id="footer">
-<ul class="linksfooter">
-<li><a href="#" target="_blank">The Company</a></li>
-<li><a href="#" target="_blank">Site Map</a></li>
-<li><a href="#" target="_blank">Contact Us</a></li>
-</ul>
-<ul class="linksfooter">
-<li><a href="#" target="_blank">Legal Notes</a></li>
-<li><a href="#" target="_blank">Conditions of use</a></li>
-<li><a href="#" target="_blank">Privacy</a></li>
-</ul>
-<div class="social-footer-icons">
-    <ul class="menu simple">
-      <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.instagram.com/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-      <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-    </ul>
-	</div>
-</footer>
+<?php include 'footer.html';?>
 </body>
 </html>
