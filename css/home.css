@@ -110,6 +110,7 @@ li.media{
 min-width:100%;
 }
 li.media img{
+	height:150px;
 	max-width:100%;
 }
 .left,.right{

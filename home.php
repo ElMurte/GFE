@@ -13,50 +13,18 @@
 </head>
 <body>
 <?php include './html/header.html';?>
-
 <main id="main">
 <noscript class="mobilens">The content can't be scrolled and the menu is not function is not accessible if you disabled the javascript</noscript>
 <h1>Last Releases &rarr; <a href="ultimeuscite.html">see all</a></h1>
 <div class="tagmedias">
 <ul id="ultimeuscite" class="listamedia">
 <?php 
-require_once("./php/connessionedb.php");
-$sci="SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5;";
- $result=$DB->query($sci);
-if($result->num_rows>0){
-	while($row=$result->fetch_assoc()){
-			$rat=$row["rating"];
-			$norat=5-$row["rating"];
-			echo "
-<li class='media currentItem'>
-			<a href='media.php?m=".rawurlencode($row["idM"])."' title='".rawurlencode($row["title"])."'><img class='copertina' src='./immagini/copertina/".$row["poster"]."'/> </a> 
-<div class='info'>
-				<span class='titolo'>Avengers infinity war</span>
-		<footer class='mediafooter'>
-					<span class='durata'>".$row["ftime"]."</span>
-						<div class='rating'>";
-						while($rat)
-						{
-							echo "<span class='fa fa-star checked'></span>";
-							$rat--;
-						}
-						while($norat)
-							{echo"<span class='fa fa-star'></span>";
-								$norat=$norat-1;
-							};
-					echo"</div>
-		<div class='buttons'>
-		<button type='onclick' class='aggiungi'>&#43;</button>
-		<button type='onclick' class='aggiungi'>-</button>
-		</div>
-	</footer>
-</div>
-</li>
-";
-	};
-};
+require_once("./php/phpfunctions.php");
+	scihome();
 	?>
 	</ul>
+	<button type="onclick" class="scroll left">&lt;</button>
+	<button type="onclick" class="scroll right">&gt;</button>
 	</div>
 </main>
 <?php include './html/footer.html';?>
