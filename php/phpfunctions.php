@@ -2,8 +2,8 @@
 	require_once("./php/connessionedb.php");
 function scihome(){
 	global $DB;
-$sci="SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5;";
-$mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM LIMIT 5;";
+$sci="SELECT o.idM,o.title,o.poster,o.ftime,o.rating FROM (SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5)AS o LEFT JOIN (SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5)as op ON o.idM=op.idM where op.idM IS NULL LIMIT 5";
+$mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5;";
  $myresult=$DB->query($mysci);
  $result=$DB->query($sci);
  $resnum=$result->num_rows;
@@ -40,16 +40,16 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 ";
 	};
   };
-	while($resnum>0 && $row=$result->fetch_assoc()){
-			$rat=$row["rating"];
-			$norat=5-$row["rating"];
+	while($resnum>0 && $row1=$result->fetch_assoc()){
+			$rat=$row1["rating"];
+			$norat=5-$row1["rating"];
 			echo "
 <li class='media currentItem'>
-			<a href='media.php?m=".rawurlencode($row["idM"])."' title='".rawurlencode($row["title"])."'><img class='copertina' src='./immagini/copertina/".$row["poster"]."'/> </a> 
+			<a href='media.php?m=".rawurlencode($row1["idM"])."' title='".rawurlencode($row1["title"])."'><img class='copertina' src='./immagini/copertina/".$row1["poster"]."'/> </a> 
 <div class='info'>
-				<span class='titolo'>".$row["title"]."</span>
+				<span class='titolo'>".$row1["title"]."</span>
 		<footer class='mediafooter'>
-					<span class='durata'>".$row["ftime"]."</span>
+					<span class='durata'>".$row1["ftime"]."</span>
 						<div class='rating'>";
 						while($rat)
 						{
@@ -62,9 +62,7 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 							};
 					echo"</div>
 		<div class='buttons'>
-		<form action='addtolist()' method='POST'>
-		<button type='submit' class='aggiungi' action=\'./php/addtolist.php\'>+</button>
-		</form>
+		<button type='submit' class='aggiungi' formaction='addtolist()' formmethod='POST'>+</button>
 		</div>
 	</footer>
 </div>
@@ -72,7 +70,6 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 ";
 $resnum--;
 	};
-	$DB->close();
 };
 
 function addtolist(){

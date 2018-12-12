@@ -15,8 +15,20 @@
 <?php include './html/header.html';?>
 <main id="main">
 <noscript class="mobilens">The content can't be scrolled and the menu is not function is not accessible if you disabled the javascript</noscript>
-<h1>Last Releases &rarr; <a href="ultimeuscite.html">see all</a></h1>
+<h1>Last Releases for:</h1>
 <div class="tagmedias">
+<h2>SCI-FI</h2>
+<ul id="ultimeuscite" class="listamedia">
+<?php 
+require_once("./php/phpfunctions.php");
+	scihome();
+	?>
+	</ul>
+	<button type="onclick" class="scroll left">&lt;</button>
+	<button type="onclick" class="scroll right">&gt;</button>
+	</div>
+	<div class="tagmedias">
+<h2>Action</h2>
 <ul id="ultimeuscite" class="listamedia">
 <?php 
 require_once("./php/phpfunctions.php");
