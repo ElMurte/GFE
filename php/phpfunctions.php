@@ -62,7 +62,9 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 							};
 					echo"</div>
 		<div class='buttons'>
+		<form action='addtolist()' method='POST'>
 		<button type='submit' class='aggiungi' action=\'./php/addtolist.php\'>+</button>
+		</form>
 		</div>
 	</footer>
 </div>
