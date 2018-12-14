@@ -14,7 +14,7 @@ li.media img{
 }
 li.media img:hover{
 	transform:scale(1.1,1.05);
-	border:1px solid white;
+	border:1.5px solid white;
 	overflow:none;
 }
 span.fa.fa-star.checked {

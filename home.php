@@ -20,6 +20,7 @@
 <h2>SCI-FI</h2>
 <ul id="ultimeuscite" class="listamedia">
 <?php 
+include("./php/connessionedb.php");
 require_once("./php/phpfunctions.php");
 	scihome();
 	?>
