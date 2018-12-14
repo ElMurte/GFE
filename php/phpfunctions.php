@@ -1,8 +1,36 @@
 <?php 
-function scihome(){
+function homeprint(){
+		global $DB;
+	$scifi="SCI-FI";
+	echo"<div class='tagmedias'>
+			<h2>SCI-FI</h2>
+			<ul id='ultimeuscite' class='listamedia'>";
+	scihome($scifi);
+	echo"</ul><div>";
+	$scifi="Action";
+	echo"<div class='tagmedias'>
+		<h2>Action</h2>
+			<ul id='ultimeuscite' class='listamedia'>";
+	scihome($scifi);
+	echo"</ul><div>";
+	$scifi="Drama";
+	echo"<div class='tagmedias'>
+		<h2>Drama</h2>
+			<ul id='ultimeuscite' class='listamedia'>";
+	scihome($scifi);
+	echo"</ul><div>";
+	$scifi="Comedy";
+	echo"<div class='tagmedias'>
+		<h2>Comedy</h2>
+			<ul id='ultimeuscite' class='listamedia'>";
+	scihome($scifi);
+	echo"</ul><div>";
+	$DB->close();
+};
+function scihome($string){
 	global $DB;
-$sci="SELECT o.idM,o.title,o.poster,o.ftime,o.rating FROM (SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5)AS o LEFT JOIN (SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5)as op ON o.idM=op.idM where op.idM IS NULL LIMIT 5";
-$mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%SCI-FI%' LIMIT 5;";
+$sci="SELECT o.idM,o.title,o.poster,o.ftime,o.rating FROM (SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%".$string."%' LIMIT 5)AS o LEFT JOIN (SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%".$string."%' LIMIT 5)as op ON o.idM=op.idM where op.idM IS NULL LIMIT 5";
+$mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%".$string."%' LIMIT 5;";
  $myresult=$DB->query($mysci);
  $result=$DB->query($sci);
  $resnum=$result->num_rows;
@@ -70,6 +98,7 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 $resnum--;
 	};
 };
+
 
 function addtolist(){
 if (isset($_POST["submit"])) {
