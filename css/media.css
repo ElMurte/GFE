@@ -6,10 +6,6 @@
 a:active{
 	color:#ff1b00;
 }
-.imgmedia img{
-	float:left;
-	width:100%;
-}
 .mediavideo{
 	min-width: 240px;
     width: 80%;

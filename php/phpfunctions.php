@@ -70,10 +70,9 @@ function infomedia($val){
 	<h1 title='duration movie' class='mm'>".$row["ftime"]."</h1>
 	</div>
 	<video class='mediavideo' poster='./immagini/copertina/".rawurlencode($row["poster"])."' title='Movie video'controls>
-	  <source src='./video/".rawurlencode($row["source"]).".mp4' type='video/mp4'>
+	  <source src='./video/".rawurlencode($row["source"]).".mp4' type='video/mp4'/>
 	   Your browser does not support the video tag.
 	</video>
-		<div class='imgmedia'>
 			<div class='plot'>
 			<h3 title='movie plot'>";
 			echo"".$row["plot"]."
