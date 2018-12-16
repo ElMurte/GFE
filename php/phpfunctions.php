@@ -1,32 +1,93 @@
 <?php 
+/*INIZIO PHP HOME*/
 function homeprint(){
 		global $DB;
 	$scifi="SCI-FI";
 	echo"<div class='tagmedias'>
 			<h2>SCI-FI</h2>
-			<ul id='ultimeuscite' class='listamedia'>";
+			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul><div>";
+	echo"</ul>
+	<button type='button' class='scroll left' title='scroll left'>&lt;
+</button>
+<button type='button' class='scroll right' title='scroll right'>&gt;
+</button>
+	</div>";
 	$scifi="Action";
 	echo"<div class='tagmedias'>
 		<h2>Action</h2>
-			<ul id='ultimeuscite' class='listamedia'>";
+			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul><div>";
+	echo"</ul>	<button type='button' class='scroll left' title='scroll left'>&lt;
+</button>
+<button type='button' class='scroll right' title='scroll right'>&gt;
+</button></div>";
 	$scifi="Drama";
 	echo"<div class='tagmedias'>
 		<h2>Drama</h2>
-			<ul id='ultimeuscite' class='listamedia'>";
+			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul><div>";
+	echo"</ul>	<button type='button' class='scroll left' title='scroll left'>&lt;
+</button>
+<button type='button' class='scroll right' title='scroll right'>&gt;
+</button></div>";
 	$scifi="Comedy";
 	echo"<div class='tagmedias'>
 		<h2>Comedy</h2>
-			<ul id='ultimeuscite' class='listamedia'>";
+			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul><div>";
+	echo"</ul>	<button type='button' class='scroll left' title='scroll left'>&lt;
+</button>
+<button type='button' class='scroll right' title='scroll right'>&gt;
+</button></div>";
 	$DB->close();
 };
+/*printstars*/
+function checkstars($int){
+		while($int){
+		echo "<span class='fa fa-star checked'></span>";
+							$int--;
+		};
+};
+function stars($int){
+		while($int){
+		echo "<span class='fa fa-star'></span>";
+		$int--;};
+};
+
+function infomedia($val){
+		global $DB;
+		$media="SELECT title,yearrelease,poster,ftime,rating,source,plot FROM `movies` where idM='".$val."'";
+		$result=$DB->query($media);
+		if($result->num_rows>0){
+		$row = mysqli_fetch_assoc($result);
+			$rat=$row["rating"];
+			$norat=5-$row["rating"];
+	echo"<h1 title='title movie' class='mm'>".$row["title"]."<h1/><h1 title='rating movie' class='mm'><div class='rating'>";
+	checkstars($rat);stars($norat);
+	echo"</div></h1> 
+	<h1 title='year of release' class='mm'>".$row["yearrelease"]."</h1>  
+	<h1 title='duration movie' class='mm'>".$row["ftime"]."</h1>
+	</div>
+	<video class='mediavideo' poster='./immagini/copertina/".rawurlencode($row["poster"])."' title='Movie video'controls>
+	  <source src='./video/".rawurlencode($row["source"]).".mp4' type='video/mp4'>
+	   Your browser does not support the video tag.
+	</video>
+		<div class='imgmedia'>
+			<div class='plot'>
+			<h3 title='movie plot'>";
+			echo"".$row["plot"]."
+			 </h3>
+			 </div>";
+	};
+	};
+/*fine printstars*/
+function media(){
+	if(isset($_GET["m"]))
+	$val = $_GET["m"];
+	infomedia($val);
+};
+
 function scihome($string){
 	global $DB;
 $sci="SELECT o.idM,o.title,o.poster,o.ftime,o.rating FROM (SELECT idM,title,poster,ftime,rating FROM `movies` WHERE tag COLLATE UTF8_GENERAL_CI LIKE '%".$string."%' LIMIT 5)AS o LEFT JOIN (SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WHERE uemail='user@user.com')as user JOIN `movies`  ON ufilm=idM where tag COLLATE UTF8_GENERAL_CI LIKE '%".$string."%' LIMIT 5)as op ON o.idM=op.idM where op.idM IS NULL LIMIT 5";
@@ -42,24 +103,17 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 			$norat=5-$row["rating"];
 			echo "
 <li class='media currentItem'>
-			<a href='media.php?m=".rawurlencode($row["idM"])."' title='".rawurlencode($row["title"])."'><img class='copertina' src='./immagini/copertina/".$row["poster"]."'/> </a> 
+			<a href='media.php?m=".$row["idM"]."' title='".rawurlencode($row["title"])."'><img class='copertina' src='./immagini/copertina/".rawurlencode($row["poster"])."' alt='poster of ".$row["title"]."'/> </a> 
 <div class='info'>
-				<span class='titolo'>".$row["title"]."</span>
+				<span class='titolo' title='".$row["title"]."'>".$row["title"]."</span>
 		<footer class='mediafooter'>
-					<span class='durata'>".$row["ftime"]."</span>
-						<div class='rating'>";
-						while($rat)
-						{
-							echo "<span class='fa fa-star checked'></span>";
-							$rat--;
-						}
-						while($norat)
-							{echo"<span class='fa fa-star'></span>";
-								$norat=$norat-1;
-							};
+					<span class='durata' title='lenght'>".$row["ftime"]."</span>
+						<div class='rating' title='rating'>";
+						checkstars($rat);
+						stars($norat);
 					echo"</div>
 		<div class='buttons'>
-		<button type='submit' class='aggiungi' action=\'./php/removefromolist.php\'>-</button>
+		<button type='submit' class='aggiungi' action='' title='remove from my list'>-</button>
 		</div>
 	</footer>
 </div>
@@ -72,24 +126,17 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 			$norat=5-$row1["rating"];
 			echo "
 <li class='media currentItem'>
-			<a href='media.php?m=".rawurlencode($row1["idM"])."' title='".rawurlencode($row1["title"])."'><img class='copertina' src='./immagini/copertina/".$row1["poster"]."'/> </a> 
+			<a href='media.php?m=".$row1["idM"]."' title='".rawurlencode($row1["title"])."'><img class='copertina' src='./immagini/copertina/".rawurlencode($row1["poster"])."' alt='poster of ".$row1["title"]."'/> </a> 
 <div class='info'>
-				<span class='titolo'>".$row1["title"]."</span>
+				<span class='titolo' title='".$row1["title"]."'>".$row1["title"]."</span>
 		<footer class='mediafooter'>
-					<span class='durata'>".$row1["ftime"]."</span>
-						<div class='rating'>";
-						while($rat)
-						{
-							echo "<span class='fa fa-star checked'></span>";
-							$rat--;
-						}
-						while($norat)
-							{echo"<span class='fa fa-star'></span>";
-								$norat=$norat-1;
-							};
+					<span class='durata' title='lenght'>".$row1["ftime"]."</span>
+						<div class='rating' title='rating'>";
+						checkstars($rat);
+						stars($norat);
 					echo"</div>
 		<div class='buttons'>
-		<button type='submit' class='aggiungi' formaction='addtolist()' formmethod='POST'>+</button>
+		<button type='submit' class='aggiungi' formaction='addtolist()' formmethod='POST' title='add to my list'>+</button>
 		</div>
 	</footer>
 </div>
@@ -98,7 +145,7 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 $resnum--;
 	};
 };
-
+/*FINE PHP HOME*/
 
 function addtolist(){
 if (isset($_POST["submit"])) {

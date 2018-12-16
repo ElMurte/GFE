@@ -175,7 +175,7 @@ ul#sub1 {
 			 margin:0;
 		}
 			#main h1{
-		font-size:1.2em;
+		font-size:1.5em;
 					}
 			#main{
 					margin-top:10em;
@@ -299,6 +299,7 @@ ul#sub1 {
 
 /*main css*/
 #main{
+	background:#141414;
 }
 #main h1 a{
 	text-decoration:none;

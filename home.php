@@ -14,7 +14,6 @@
 <body>
 <?php include './html/header.html';?>
 <main id="main">
-<noscript class="mobilens">The content can't be scrolled and the menu is not function is not accessible if you disabled the javascript</noscript>
 <h1>Last Releases for:</h1>
 <?php 
 include("./php/connessionedb.php");
