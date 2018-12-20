@@ -3,7 +3,7 @@
 	font-family: 'K2D', sans-serif;
 	color:white;
 }
-	body{background:#141414;}
+	body{background:#141414 !important;}
 /*fine css body*/
 /*inizo css header*/
 .nonvedente{
@@ -16,8 +16,8 @@ left:-200%;
 	margin-left:2%;
 	margin-right:2%;
 	cursor: default;
-	width:8%;
-	min-width:100px;
+	width:7%;
+	min-width:80px;
 	float:left;
 }
 #header{

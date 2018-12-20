@@ -11,13 +11,10 @@
 <link rel="stylesheet" type="text/css" href="./css/home.css"></link>
 <link rel="stylesheet" type="text/css" href="./css/cerca.css"></link>
 <script type="text/javascript" src="./js/netmovies.js"></script>
-
 </head>
 <body>
 <?php include './html/header.html';?>
 <main id="main">
-
-
 <?php
 include("./php/connessionedb.php");
 require_once("./php/phpfunctions.php");

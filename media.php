@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php require_once("./php/sessione.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +22,7 @@ session_start();
 	require_once("./php/phpfunctions.php");
 	media();
 	?>
+	</div>
 </main>
 <?php include './html/footer.html';?>
 </body>

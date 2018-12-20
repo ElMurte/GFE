@@ -1,5 +1,6 @@
 <?php 
 /*INIZIO PHP HOME*/
+include("connessionedb.php");
 function homeprint(){
 		global $DB;
 	$scifi="SCI-FI";
@@ -63,13 +64,13 @@ function infomedia($val){
 		$row = mysqli_fetch_assoc($result);
 			$rat=$row["rating"];
 			$norat=5-$row["rating"];
-	echo"<h1 title='title movie' class='mm'>".$row["title"]."<h1/><h1 title='rating movie' class='mm'><div class='rating'>";
+	echo"<h1 title='title movie' class='mm'>".$row["title"]."</h1><h1 title='rating movie' class='mm'>";
 	checkstars($rat);stars($norat);
-	echo"</div></h1> 
+	echo"</h1> 
 	<h1 title='year of release' class='mm'>".$row["yearrelease"]."</h1>  
 	<h1 title='duration movie' class='mm'>".$row["ftime"]."</h1>
 	</div>
-	<video class='mediavideo' poster='./immagini/copertina/".rawurlencode($row["poster"])."' title='Movie video'controls>
+	<video class='mediavideo' poster='./immagini/copertina/".rawurlencode($row["poster"])."' title='Movie video' controls >
 	  <source src='./video/".rawurlencode($row["source"]).".mp4' type='video/mp4'/>
 	   Your browser does not support the video tag.
 	</video>
@@ -112,7 +113,10 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 						stars($norat);
 					echo"</div>
 		<div class='buttons'>
-		<button type='submit' class='aggiungi' action='' title='remove from my list'>-</button>
+		<form action='./php/removefromlist.php' method='post'>
+		<input type='hidden' name='valueB' value='".$row["idM"]."' />
+		<button type='submit' class='aggiungi' title='remove movie from my list'>-</button>
+		</form>
 		</div>
 	</footer>
 </div>
@@ -135,8 +139,10 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 						stars($norat);
 					echo"</div>
 		<div class='buttons'>
-		<button type='submit' class='aggiungi' formaction='addtolist()' formmethod='POST' title='add to my list'>+</button>
-		</div>
+		<form action='./php/addtolist.php' method='post'>
+		<input type='hidden' name='valueB' value='".$row1["idM"]."' />
+		<button type='submit' class='aggiungi' title='add movie to my list'>+</button>
+		</form></div>
 	</footer>
 </div>
 </li>
@@ -144,28 +150,36 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 $resnum--;
 	};
 };
-/*FINE PHP HOME*/
+//FINE PHP HOME
 
-function addtolist(){
-if (isset($_POST["submit"])) {
-							$sql="INSERT INTO userlists (ufilm,uemail) VALUES (?,?)";
-							   $stmt = mysqli_prepare($DB,$sql);
-							   $user = mysqli_real_escape_string($DB,$stmt);
-								$stmt->bind_param("ss",$_POST["ufilm"],$_POST["uemail"]);
-								if($stmt->execute()===TRUE){
-								$_SESSION["succ"]="Movie added to list succesfully";
-									header("Location: ../home.php");
-								}
-							};
+function addtolist($adc,$sess){
+	global $DB;
+	$sql="INSERT INTO userlists (ufilm,uemail) VALUES (?,?)";
+	$stmt = mysqli_prepare($DB,$sql);
+	$stmt->bind_param("is",$adc,$sess);
+	 $user = mysqli_real_escape_string($DB,$stmt);
+	if($stmt->execute()===TRUE){
+		$_SESSION["succ"]="Movie added to list succesfully";
+		header("Location: ../home.php");
+	}
+	else echo"non va";
 };
-function removefromolist(){
-
+function removefromlist($adc,$sess){
+	global $DB;
+	$sql="DELETE FROM userlists WHERE ufilm='".$adc."' AND uemail='".$sess."'";
+	$stmt = mysqli_prepare($DB,$sql);
+	$stmt->bind_param("is",$adc,$sess);
+	 $user = mysqli_real_escape_string($DB,$stmt);
+	if($stmt->execute()===TRUE){
+		$_SESSION["del"]="Movie removed from list succesfully";
+		header("Location: ../home.php");
+	}
+	else echo"non va";
 };
 function search(){
 	global $DB;
 $search=$_GET["search"];
 echo "<h2>Search results for: ".$search." </h2>";
-
 if($search)
 {
     $arr_cerca = explode(" ", $search);

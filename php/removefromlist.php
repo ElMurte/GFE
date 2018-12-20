@@ -4,8 +4,9 @@ require_once("../php/phpfunctions.php");
 session_start();
 if (isset($_POST["valueB"])) {
 	$val=$_POST["valueB"];
-	if(isset($_SESSION["user"]))
+	if(isset($_SESSION["user"])){
 		$sess="".$_SESSION["user"]."";
-	addtolist($val,$sess);
-}
+	removefromlist($val,$sess);
+	};
+};
 ?>
