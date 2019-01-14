@@ -9,9 +9,9 @@ function homeprint(){
 			<ul class='listamedia'>";
 	scihome($scifi);
 	echo"</ul>
-	<button type='button' class='scroll left' title='scroll left'>&lt;
+	<button type='button' class='scroll left' title='scroll left SCI-FI Movies'>&lt;
 </button>
-<button type='button' class='scroll right' title='scroll right'>&gt;
+<button type='button' class='scroll right' title='scroll right SCI-FI Movies'>&gt;
 </button>
 	</div>";
 	$scifi="Action";
@@ -19,27 +19,27 @@ function homeprint(){
 		<h2>Action</h2>
 			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul>	<button type='button' class='scroll left' title='scroll left'>&lt;
+	echo"</ul>	<button type='button' class='scroll left' title='scroll left on Action Movies'>&lt;
 </button>
-<button type='button' class='scroll right' title='scroll right'>&gt;
+<button type='button' class='scroll right' title='scroll right on Action Movies'>&gt;
 </button></div>";
 	$scifi="Drama";
 	echo"<div class='tagmedias'>
 		<h2>Drama</h2>
 			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul>	<button type='button' class='scroll left' title='scroll left'>&lt;
+	echo"</ul>	<button type='button' class='scroll left' title='scroll left on Drama Movies'>&lt;
 </button>
-<button type='button' class='scroll right' title='scroll right'>&gt;
+<button type='button' class='scroll right' title='scroll right on Drama Movies'>&gt;
 </button></div>";
 	$scifi="Comedy";
 	echo"<div class='tagmedias'>
 		<h2>Comedy</h2>
 			<ul class='listamedia'>";
 	scihome($scifi);
-	echo"</ul>	<button type='button' class='scroll left' title='scroll left'>&lt;
+	echo"</ul>	<button type='button' class='scroll left' title='scroll left Comedy Movies'>&lt;
 </button>
-<button type='button' class='scroll right' title='scroll right'>&gt;
+<button type='button' class='scroll right' title='scroll right Comedy Movies'>&gt;
 </button></div>";
 	$DB->close();
 };
@@ -64,9 +64,9 @@ function infomedia($val){
 		$row = mysqli_fetch_assoc($result);
 			$rat=$row["rating"];
 			$norat=5-$row["rating"];
-	echo"<h1 title='title movie' class='mm'>".$row["title"]."</h1><h1 title='rating movie' class='mm'>";
+	echo"<h1 title='title movie' class='mm'>".$row["title"]."</h1><div title='rating movie' class='mm mr'>";
 	checkstars($rat);stars($norat);
-	echo"</h1> 
+	echo"</div> 
 	<h1 title='year of release' class='mm'>".$row["yearrelease"]."</h1>  
 	<h1 title='duration movie' class='mm'>".$row["ftime"]."</h1>
 	</div>
@@ -79,13 +79,17 @@ function infomedia($val){
 			echo"".$row["plot"]."
 			 </h3>
 			 </div>";
-	};
+	}
+	else echo"<h1>error 404: movie not found</h1>";
 	};
 /*fine printstars*/
 function media(){
-	if(isset($_GET["m"]))
+	if(isset($_GET["m"])){
 	$val = $_GET["m"];
 	infomedia($val);
+	}
+	else 
+		echo"<h1 title='error 404'>Error 404:Movie not found</h1>";
 };
 
 function scihome($string){
@@ -115,7 +119,7 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 		<div class='buttons'>
 		<form action='./php/removefromlist.php' method='post'>
 		<input type='hidden' name='valueB' value='".$row["idM"]."' />
-		<button type='submit' class='aggiungi' title='remove movie from my list'>-</button>
+		<button type='submit' class='aggiungi' title='remove ".$row["title"]." from my list'>-</button>
 		</form>
 		</div>
 	</footer>
@@ -141,7 +145,7 @@ $mysci="SELECT idM,title,poster,ftime,rating FROM ( SELECT * FROM `userlists` WH
 		<div class='buttons'>
 		<form action='./php/addtolist.php' method='post'>
 		<input type='hidden' name='valueB' value='".$row1["idM"]."' />
-		<button type='submit' class='aggiungi' title='add movie to my list'>+</button>
+		<button type='submit' class='aggiungi' title='add ".$row1["title"]." from "."$string"." to my list'>+</button>
 		</form></div>
 	</footer>
 </div>

@@ -3,46 +3,49 @@
 body{
 	height:100%;
 	width:100%;
-	margin:0 0;
-	background: url("../immagini/sfondoLogin.jpg") no-repeat center center fixed;
-	 -webkit-background-size: cover;
-	 background-size: cover;
-	 overflow:hidden;
+	margin:auto;
 }
-#main{
-	background:transparent;
+#main img{
+	opacity:0.6;
 }
 /*div di logo*/
 #logologin{
 	text-align:center;
 }
-#logologin a,#logologin,#loginlogo{
-	background:transparent;
-}
+
 /*Immagine(logo) */
 #loginlogo{
-	max-width:480px;
+	max-width:25em;
 	margin:0.5% auto;
+	padding-top:1em;
 }
+
 /*div che contiene tutto il form */
 #form_accedi {
-	min-width:300px;
+	min-width:20em;
 	width:33%;
 	color:#FF1B00;
 	margin:2% auto;
+	margin-top:2%;
 }
 
-#form_accedi p{
+ p{
 	font-size:1.5em;
 	color:#FF1B00;
 }
+.errore{
+ font-size:1em;
+ color:white;
+padding-bottom: 0em;
+}
 
-/*h2 di Accedi*/
+/*h2 di Login*/
 h1{
 	width:60%;
+	text-align:center;
 	margin:auto auto;
 	font-size:1.5em;
-	padding:0.5em;
+
 }
 
 /* div del text , password  e bottone  */
@@ -57,14 +60,23 @@ input[type=text], input[type=password] {
   background-color: #141414;
 	color:white;
   width: 70%;
-	border:1px solid white;
+	border:none;
+	border-bottom:1px solid white;
 	font-size:1em;
   padding: 1em 1em;
   margin:0.5em 0;
   display: inline-block;
   box-sizing: border-box;
 }
-
+input:invalid {
+  outline: none;
+}
+input:focus + placeholder, input:valid + placeholder {
+  font-size: 12px;
+  color: #FF4081;
+  -webkit-transform: translateY(-15px);
+  transform: translateY(-15px);
+}
 button {
   background-color: #FF1B00;
   color: white;
@@ -84,7 +96,8 @@ button:hover {
 /*div per il Sei nuovo? registrati */
 #registra {
 	font-size:0.7em;
-	padding:0.5em;
+	padding-top: 0em;
+	padding-left:17%;
 }
 #registra a {
 
@@ -93,6 +106,7 @@ button:hover {
 
 /*css login fine*/
 /*footer*/
+
 /*footer*/
 
 
@@ -104,7 +118,20 @@ button:hover {
 		margin:0;
 
 	}
-	#form_accedi input[type=text],#form_accedi input[type=password] {
+	#registra {
+		font-size:0.7em;
+
+		padding-left:9%;
+	}
+#form_accedi {
+		margin-top: 5%;
+  }
+
+	.linksfooter{
+		width:20%;
+	}
+
+	input[type=text], input[type=password] {
 	  width: 95%;
 	 	}
 

@@ -191,7 +191,7 @@ ul#sub1 {
 				padding: 1%;
 				width:auto;
 			}
-			.topnav li:not(:first-child) {display: none;}
+			.topnav li:not(:first-child .active) {display: none;}
   .topnav a.icon {
 	  display:block;
 	  position:fixed;
