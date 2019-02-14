@@ -1,0 +1,122 @@
+#adminMenu
+{
+  padding: 0em;
+  margin: 0em;
+}
+
+#adminMenu li
+{
+  display:inline-block;
+  padding-right: 1em;
+  margin-top: 1em;
+  margin-left: 0.5em;
+}
+
+#adminListMovies
+{
+    width: 100%;
+}
+#adminListMovies ul
+{
+border-bottom: 1px solid GREY;
+margin:0;
+padding: 0;
+width: 100%;
+}
+
+#adminListMovies li
+{
+
+  display:inline-block;
+  width: 20%;
+  margin: 0;
+  text-align: center;
+}
+.cestino
+{
+  width: 10%;
+}
+/*****************form insert movie ************************/
+
+#form_InsertMovie
+{
+  width:100%;
+
+}
+#form_InsertMovie  input[type=text],#form_InsertMovie  input[type=number] ,#form_InsertMovie textarea{
+  background-color: #141414;
+	color:white;
+  width: 40%;
+	border:none;
+	border-bottom:1px solid white;
+	font-size:1em;
+  padding: 1em 1em;
+  margin:0.5em 0;
+
+  box-sizing: border-box;
+}
+#form_InsertMovie button {
+  background-color: #FF1B00;
+  color: white;
+  width: 20%;
+	font-weight:bold;
+	padding: 1em 1.5em;
+	margin:0.5em 0;
+  margin-left: 10%;
+	margin-top:2.3em;
+  border: none;
+  cursor: pointer;
+}
+.container
+{
+  display:grid;
+  padding-left:2%;
+}
+.errore
+{
+margin-left: 1.3em;
+color: orange;
+}
+textarea{
+  height: 20em;
+  resize: vertical;
+}
+
+.adminButton
+{
+  background: #141414;
+  
+}
+
+@media only screen and (max-width:730px) {
+  /* For mobile phones: */
+
+	#form_InsertMovie input[type=text] ,#form_InsertMovie  input[type=number] ,	#form_InsertMovie textarea {
+	  width: 95%;
+	 	}
+
+		#form_InsertMovie button {
+			width: 75%;
+		}
+
+    #adminMenu li
+    {
+      display:inline-block;
+
+    }
+
+    #adminListMovies li
+    {
+      width: 34%;
+    }
+
+    #adminListMovies li:nth-child(3)
+    {
+      margin-left: 5%;
+    }
+    #adminListMovies li:nth-child(4),#adminListMovies li:nth-child(3)
+    {
+      width: 10%;
+    }
+
+}

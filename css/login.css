@@ -22,23 +22,27 @@ body{
 
 /*div che contiene tutto il form */
 #form_accedi {
-	min-width:20em;
 	width:33%;
-	color:#FF1B00;
 	margin:2% auto;
 	margin-top:2%;
 }
 
- p{
-	font-size:1.5em;
-	color:#FF1B00;
+p{
+ font-size:1.5em;
+}
+.fieldTitle{
+font-size:1.3em;
 }
 .errore{
- font-size:1em;
- color:white;
+font-size:0.8em;
+color:orange;
 padding-bottom: 0em;
 }
+.Sign
+{
+	color:#FF1B00;
 
+}
 /*h2 di Login*/
 h1{
 	width:60%;
@@ -56,10 +60,10 @@ h1{
 }
 
 /* stile del text e password  e bottone */
-input[type=text], input[type=password] {
+#form_accedi  input[type=text], #form_accedi input[type=password] {
   background-color: #141414;
 	color:white;
-  width: 70%;
+  width: 80%;
 	border:none;
 	border-bottom:1px solid white;
 	font-size:1em;
@@ -68,16 +72,9 @@ input[type=text], input[type=password] {
   display: inline-block;
   box-sizing: border-box;
 }
-input:invalid {
-  outline: none;
-}
-input:focus + placeholder, input:valid + placeholder {
-  font-size: 12px;
-  color: #FF4081;
-  -webkit-transform: translateY(-15px);
-  transform: translateY(-15px);
-}
-button {
+
+
+#form_accedi button,#form_InsertMovie button {
   background-color: #FF1B00;
   color: white;
 	width: 70%;
@@ -89,7 +86,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+#form_accedi button:hover {
   opacity: 0.8;
 }
 
@@ -106,7 +103,6 @@ button:hover {
 
 /*css login fine*/
 /*footer*/
-
 /*footer*/
 
 
@@ -118,23 +114,18 @@ button:hover {
 		margin:0;
 
 	}
-	#registra {
-		font-size:0.7em;
-
-		padding-left:9%;
-	}
-#form_accedi {
-		margin-top: 5%;
-  }
-
-	.linksfooter{
-		width:20%;
-	}
-
-	input[type=text], input[type=password] {
+	#form_accedi {
+		width: 90%;
+		}
+	#form_accedi input[type=text],#form_accedi input[type=password] {
 	  width: 95%;
 	 	}
 
 		button {
 			width: 95%;
+		}
+		#registra {
+			font-size:0.7em;
+
+			padding-left:9%;
 		}

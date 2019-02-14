@@ -1,4 +1,3 @@
-<?php require_once("./php/sessione.php"); ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,17 +9,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <link rel="stylesheet" type="text/css" href="./css/general.css"/>
 <link rel="stylesheet" type="text/css" href="./css/home.css"/>
+<link rel="stylesheet" type="text/css" href="./css/stampa.css" media="print"/>
 <script type="text/javascript" src="./js/netmovies.js"></script>
 </head>
 <body>
-<?php include './html/header.html';?>
+<?php include './html/header.php';?>
 <main id="main">
 <h1>Last Releases for:</h1>
-<?php 
-include("./php/connessionedb.php");
+<?php
 require_once("./php/phpfunctions.php");
-	homeprint();
-	?>
+homeprint();add();remove();
+?>
 </main>
 <?php include './html/footer.html';?>
 </body>

@@ -1,0 +1,114 @@
+body{
+	height:100%;
+	width:100%;
+	margin:auto;
+	padding:0;
+}
+/*div di logo*/
+#logosito{
+text-align:center;
+}
+/*CONTENITORE LOGO */
+#logo{
+  max-width:25em;
+  margin:0.5% auto;
+  padding-top:1em;
+}
+
+
+/*div che contiene tutto il form */
+#form_reg {
+	width:33%;
+	margin:2% auto;
+	margin-top:2%;
+}
+
+p{
+ font-size:1.5em;
+ color:#FF1B00;
+}
+
+/*costum h1*/
+h1{
+	width:60%;
+	text-align:center;
+	margin:auto auto;
+	font-size:1.5em;
+}
+/* div del text,password e bottone  */
+.formReg{
+	text-align:center;
+  padding: 1em;
+}
+/* stile del text e password  e bottone */
+#form_reg  input[type=text], #form_reg input[type=password]{
+	background-color: #141414;
+	color:white;
+  width: 80%;
+	border:none;
+	border-bottom:1px solid white;
+	font-size:1em;
+  padding: 1em 1em;
+  margin:0.5em 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+/*costum checkbox*/
+  		#termini,#maggiorene{
+      padding: 1%;
+  	  font-size:14pt;
+  		text-align:center;
+  		}
+
+/*costum button*/
+#form_reg button{
+  background-color: #FF1B00;
+  color: white;
+	width: 75%;
+	font-weight:bold;
+	padding: 1em 1.5em;
+	margin:0.5em 0;
+	margin-top:2.3em;
+  border: none;
+  cursor: pointer;
+}
+
+#form_reg button:hover {
+  opacity: 0.8;
+}
+
+.errore
+{
+font-size:0.7em;
+padding-bottom: 0em;
+margin: 1,5em;
+color: orange;
+}
+p.erroreSign {
+    text-align: center;
+    color: orange;
+}
+
+
+@media only screen and (max-width:730px) {
+    /* For mobile phones: */
+  	#logo{
+
+  		height:5em;
+  		width:80%;
+  		margin:0;
+  	}
+
+		#form_reg {
+		width: 90%;
+		}
+
+     #form_reg input[type=text],#form_reg input[type=password] {
+      width: 95%;
+            	 	}
+							                #form_reg button{
+                width: 100%;
+                }
+                #termini,#maggiorene{
+                      	  font-size:11pt;
+            		}

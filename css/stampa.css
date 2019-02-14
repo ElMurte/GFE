@@ -1,0 +1,25 @@
+#main {
+
+  margin-top: 2.5em;
+}
+.aggiungi
+{
+  display: none;
+}
+#footer
+{
+  display: none;
+}
+ul{
+margin-top:1.5em;	
+}
+video{
+	display:none;
+}
+.vmedia{
+	min-width:100%;
+}
+.plot{
+	margin-top:5em;
+	width:100% ;
+}

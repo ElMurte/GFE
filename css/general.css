@@ -5,13 +5,32 @@
 }
 	body{background:#141414 !important;}
 /*fine css body*/
+ .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#blockColorblindContent {
+    display: none;
+}
 /*inizo css header*/
 .nonvedente{
 position:absolute;
 top:-200%;
 left:-200%;
 }
-
+.adminButton{
+background:#141414;
+}
+.errore
+{
+color:orange;
+}
+p#error_search
+{
+color:orange;
+float: left;
+width: 100%;
+margin: 0;
+}
 #header .logoheader{
 	margin-left:2%;
 	margin-right:2%;
@@ -45,16 +64,19 @@ a.login{
 	padding:0.1em;
 }
 /*css barranavihazione*/
-
+a:visited {
+    color: violet;
+}
 *a:hover{
+	    text-decoration: underline;
 	transition: color 0.2s ease-in;
 	color:#ff1b00;
 }
 /*sottemnuinzio css*/
 ul#sub1 {
-	top:auto;
-    padding: 2%;
-    margin: 0;
+    top: auto;
+    /* padding: 2%; */
+    margin-top: 2.3em;
 }
 .ilsottomenu{
 	width:40%;
@@ -67,7 +89,7 @@ ul#sub1 {
 }
 .ilsottomenu li{
 	min-width:30%;
-} 
+}
 .submenutoggler:hover + .ilsottomenu, .ilsottomenu:hover{
 	padding-top: 1.5%;
 	top: 5.5%;
@@ -80,21 +102,24 @@ ul#sub1 {
 	top:4%;
 }
 /*finecss sottomenu*/
-#navbar li{
-	list-style-type:none;
-	text-decoration:none;
-	float:left;
-	margin:auto 1%;
+a.icon {
+    text-align: initial !important;
+}
+#navbar a{
+	list-style-type: none;
+    text-decoration: none;
+    float: left;
+    margin: 1%;
 	}
 	.current-link{
 	font-weight:bold;
 }
-#navbar li:hover,#header a:hover{
+#navbar a:hover,#header a:hover{
 	color:#ff1b00;
 }
 .current-link {
 	font-weight:bold;
-	color:white;
+	color:white !important;
 		pointer-events: none;
 		cursor: default;
 }
@@ -112,7 +137,7 @@ ul#sub1 {
 }
 .inputricerca{
 	background:#141414;
-    min-width: 6em;
+    min-width: 12em;
     max-width: 100%;
     padding: 0.2em 0.5em;
     font-size: 1em;
@@ -127,6 +152,7 @@ ul#sub1 {
     padding: 0;
     border-radius: 0.3em;
 }
+
 /*inizio css utente*/
 .utente{
 	max-width:2.3em;
@@ -178,28 +204,41 @@ ul#sub1 {
 		font-size:1.5em;
 					}
 			#main{
-					margin-top:10em;
+					margin-top:8em;
 					}
 			.ilsottomenu li{
 				min-width:100%;
-			} 
+			}
+			.ilsottomenu{
+				min-width:55%;
+			}
 			.submenutoggler:hover + .ilsottomenu, .ilsottomenu:hover{
-				left: 44%;
+				left: 13% !important;
+    padding: 0%;
+    /* padding: 2%; */
+    margin-top: 3.9em !important;
 			}
 			.submenutoggler:hover + .utente-content,  .utente-content:hover{
-				left: 75%;
-				padding: 1%;
-				width:auto;
-			}
-			.topnav li:not(:first-child .active) {display: none;}
+				left: 75% !important;
+    padding: 1% !important;
+    width: auto;
+    margin-top: 4% !important;
+				}
+			.topnav a {display: none;}
+
   .topnav a.icon {
-	  display:block;
-	  position:fixed;
-	  left:13%;
+	  font-size:x-large;
+	display:block;
+	position:fixed;
+	left: 70%;
+    top: 1%;
   }
-  .topnav.responsive li {
+  
+ .topnav.responsive a {
+    text-align: center;
+    min-width: 100%;
     display: block;
-  }
+}
   #navbar{
 	  min-width:100%;
 	  float:left;
@@ -211,7 +250,7 @@ ul#sub1 {
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width:992px) {
-	
+
 	.barraricerca{
 			position:initial;
 			float:left;
@@ -230,20 +269,22 @@ ul#sub1 {
 				}
 				.ilsottomenu li{
 	min-width:30%;
-} 
-} 
+}
+}
 
-/*Medium devices (landscape tablets, 768px and up)*/ 
+/*Medium devices (landscape tablets, 768px and up)*/
 @media only screen and (min-width: 768px && max-width:900px) {
-	
-} 
+ul#sub1 {
+    margin-top: 2em;
+}
+}
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {	
+@media only screen and (min-width: 992px) {
 	#main{
 		margin-top:5%;
 	}
 }
-/* Extra large devices (large laptops and desktops, 1200px and up)*/ 
+/* Extra large devices (large laptops and desktops, 1200px and up)*/
 @media only screen and (min-width: 1200px) {
 	#main{
 		margin-top:5%;
@@ -257,7 +298,6 @@ ul#sub1 {
 	background:#141414;
 	margin-top:2%;
 	width:100%;
-	min-height:100%;
 }
 .linksfooter a{
 	text-decoration:none;

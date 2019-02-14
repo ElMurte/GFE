@@ -1,0 +1,50 @@
+
+
+.info
+{
+  margin-bottom: 10% !important;
+}
+
+ul.listamedia{
+	display:block !important;
+}
+li.media{
+	display: inline-grid !important; /* supporto scadente nei vecchi browser*/
+  padding-left: 3% !important;
+	width:20% !important;
+  margin:0 auto;
+}
+li.media img{
+	height:160px !important;
+
+}
+
+.pagine
+{
+  text-align: center;
+}
+.pagine a
+{
+text-decoration: none;
+    padding: 1%;
+}
+.pagine a:hover
+{
+  transition: color 0.2s ease-in;
+  text-decoration: underline;
+    color:#ff1b00;
+}
+
+.corrente
+{
+  color:#ff1b00;
+  font-size: 2em;
+  padding:1%
+}
+@media only screen and (max-width: 600px){
+  .pagine a
+  {
+
+      padding: 3%;
+  }
+}

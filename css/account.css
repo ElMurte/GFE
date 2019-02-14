@@ -1,0 +1,99 @@
+body{
+	height:100%;
+	width:100%;
+	margin:auto;
+}
+/*div di logo*/
+#photous{
+text-align:center;
+}
+/*CONTENITORE LOGO */
+#photo{
+  display:block;
+  	width:20%;
+    padding: 20px;
+    margin-left: auto;
+  	margin-right: auto;
+    border-radius: 90%;
+}
+
+.container{
+margin: auto;
+width: 480px;
+box-sizing: border-box;
+background: rgba(0, 0, 0, 0.2);
+padding: auto;
+border-radius: 35px 35px 35px 35px;
+text-align:center;
+
+}
+.container p {
+margin: 0,5em;
+padding: 0;
+color: white;
+background-color: transparent;
+}
+
+.container input[type=password],
+.container input[type=text]
+{
+  margin-bottom: 0,5em;
+  width: 50%;
+  height: auto;
+  border:none;
+  border-bottom: 1px solid #ffffff;
+  background-color: transparent;
+  outline: none;
+  color: #ffffff;
+  opacity: 0.8;
+
+}
+
+
+
+label{
+display: block;
+}
+
+.pulsante button {
+  display: inline-block;
+  background-color: #FF1B00;
+  color: white;
+	width: 50%;
+	font-weight:bold;
+	padding: 1em 1.5em;
+	margin-bottom: 1em;
+  border: none;
+  cursor: pointer;
+
+}
+button:hover {
+opacity: 0.8;
+}
+
+.errore{
+font-size:1em;
+color:orange;
+
+}
+/*costum h1*/
+h1{
+text-align:center;
+margin: 0;
+padding:0 0 10px;
+color: white;
+
+}
+
+
+@media only screen and (max-width:730px) {
+    /* For mobile phones: */
+  	#photo{
+      height:6%;
+      width:35%;
+  	}
+
+    .container{
+    	text-align:center;
+        width: 80%;
+      }

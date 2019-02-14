@@ -1,0 +1,46 @@
+body{
+	height:100%;
+	width:100%;
+	margin:auto;
+}
+/*div di logo*/
+#logosito{
+text-align:center;
+}
+#cent{
+text-align:center;
+}
+#company{
+text-align:center;
+}
+/*CONTENITORE LOGO */
+#logo{
+  max-width:25em;
+  margin:0.5% auto;
+  padding-top:1em;
+}
+#mail{
+width:15%;
+  margin:0.5% auto;
+  padding-top:1,4em;
+  
+}
+#mappamondo{
+  width:15%;
+  margin:0.5% auto;
+  padding-top:1,4em;
+  
+}
+
+.conteiner{
+  width:70%;
+  margin:auto auto;
+}
+@media only screen and (max-width:730px) {
+    /* For mobile phones: */
+  	#logo,#mappamondo,#mail{
+
+  		height:5em;
+  		width:80%;
+  		margin:2em,1em;
+  	}

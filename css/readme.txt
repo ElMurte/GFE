@@ -1,3 +1,0 @@
-il file simple è un file che si usa per non creare un nuovo file... 
-alla fine farete salva con nome... ogni volta creando un nuovo file nella vostra repository locale.
-home è il css di tutte le pagine non solo della home (il css di home sarà a parte)

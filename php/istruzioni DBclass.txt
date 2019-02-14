@@ -1,0 +1,5 @@
+
+	const HOST_DB = 'localhost';
+	const USERNAME = 'emurteza';
+	const PASSWORD = 'laira4AeKar6aiku';
+	const DATABASE_NAME = 'emurteza';

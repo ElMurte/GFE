@@ -1,0 +1,29 @@
+body {
+ padding: 0;
+ margin: 0;
+}
+
+#userPhoto{
+  text-align:center;
+}
+
+#usphoto{
+  display:block;
+    	width:20%;
+      padding: 20px;
+      margin-left: auto;
+    	margin-right: auto;
+      border-radius: 90%;
+
+}
+.userlink{
+
+    text-align:center;
+
+}
+@media only screen and (max-width:730px) {
+    /* For mobile phones: */
+  	#usphoto{
+      height:6%;
+      width:50%;
+  	}
