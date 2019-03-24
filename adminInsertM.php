@@ -37,7 +37,7 @@ sessionadmin();
 
 			adminInsertMovie();
 				?>
-  <form name="InsertM" action="adminInsertM.php" method="post" enctype="multipart/form-data" onsubmit="return InsertAdminValidation()">
+  <form name="InsertM" action="adminInsertM.php" method="post" enctype="multipart/form-data" onsubmit="return InsertMovieValidation()">
     <div class="container">
       <label for="title" >Title</label><p><input type="text" placeholder="title of film" id="title" name="title"/>
 			<span id="error_title" class="errore"></span></p>
