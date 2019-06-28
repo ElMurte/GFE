@@ -3,7 +3,7 @@ set foreign_key_checks= 0;
 DROP TABLE IF EXISTS `UserLists`;
 DROP TABLE IF EXISTS `Users`;
 DROP TABLE IF EXISTS `Movies`;
-DROP TABLE IF EXISTS `userLists`;
+DROP TABLE IF EXISTS `userlists`;
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `movies`;
 -- -----------------------------------------------------
