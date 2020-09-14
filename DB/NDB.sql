@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS `movies`;
 -- -----------------------------------------------------
 -- Table `Users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE IF NOT EXISTS `Users` (
 `username` VARCHAR(50) NOT NULL UNIQUE,
 `userimg` VARCHAR(50) DEFAULT "userdefault.jpg",
 `name` VARCHAR(50) NOT NULL,
@@ -19,12 +19,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 `password` VARCHAR(250) NOT NULL,
 `adminsta` VARCHAR(20) DEFAULT NULL,
 PRIMARY KEY (`email`)
-ON UPDATE CASCADE
-ON DELETE CASCADE
   )
 ENGINE = InnoDB;
 
-  CREATE TABLE IF NOT EXISTS `movies` (
+  CREATE TABLE IF NOT EXISTS `Movies` (
 `idM` INT UNSIGNED NOT NULL AUTO_INCREMENT,
 `title` VARCHAR(70) NOT NULL,
 `poster` VARCHAR(70) NOT NULL,
@@ -36,27 +34,25 @@ ENGINE = InnoDB;
 `tag` text NOT NULL,
 `source` VARCHAR(250) NOT NULL DEFAULT "chappie" ,
 PRIMARY KEY (`idM`)
-ON UPDATE CASCADE
-ON DELETE CASCADE
   )
   ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `userlists` (
+CREATE TABLE IF NOT EXISTS `Userlists` (
 `ufilm` INT UNSIGNED NOT NULL,
 `user` VARCHAR(100) NOT NULL,
 PRIMARY KEY (ufilm,user),
-  FOREIGN KEY (ufilm) REFERENCES movies(idM),
-  FOREIGN KEY (user) REFERENCES users(username)
+  FOREIGN KEY (ufilm) REFERENCES Movies(idM),
+  FOREIGN KEY (user) REFERENCES Users(username)
   )
   ENGINE = InnoDB;
 set foreign_key_checks= 1;
 /*INSERTS DB*/
 /*Users*/
-INSERT INTO `users` (`username`, `name`, `surname`, `eta`, `email`, `password`) VALUES ('user', 'user', 'user', '18', 'user@user.com', 'user');
-INSERT INTO `users` (`username`, `name`, `surname`, `eta`, `email`, `password`, `adminsta`) VALUES ('admin', 'admin', 'admin', '18', 'admin@admin.com', 'admin', 'admin');
+INSERT INTO `Users` (`username`, `name`, `surname`, `eta`, `email`, `password`) VALUES ('user', 'user', 'user', '18', 'user@user.com', 'user');
+INSERT INTO `Users` (`username`, `name`, `surname`, `eta`, `email`, `password`, `adminsta`) VALUES ('admin', 'admin', 'admin', '18', 'admin@admin.com', 'admin', 'admin');
 
 /*Movies*/
-INSERT INTO `movies` (`idM`, `title`, `poster`, `yearrelease`, `ftime`, `lang`, `rating`, `plot`, `tag`, `source`) VALUES
+INSERT INTO `Movies` (`idM`, `title`, `poster`, `yearrelease`, `ftime`, `lang`, `rating`, `plot`, `tag`, `source`) VALUES
 (1, 'Interstellar', 'interstellar.jpg', 2014, '02:49:00', 'EN', 5, 'In Earth\'s future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand, a brilliant NASA physicist, is working on plans to save mankind by transporting Earth\'s population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind\'s new home..', 'Adventure,Drama,Sci-Fi', 'Chappie'),
 (2, 'Gravity', 'Gravity.jpg', 2013, '01:31:00', 'EN', 2, 'Dr. Ryan Stone (Sandra Bullock) is a brilliant medical engineer on her first shuttle mission, with veteran astronaut Matt Kowalski (George Clooney) in command of his last flight before retiring. But on a seemingly routine spacewalk, disaster strikes. The shuttle is destroyed, leaving Stone and Kowalsky completely alone - tethered to nothing but each other and spiraling out into the blackness', 'drama, sci-fi, thriller, fantascience', 'Chappie'),
 (3, 'Tomorrowland', 'Tomorrowland.jpg', 2015, '02:10:00', 'EN', 4, 'Bound by a shared destiny, a bright, optimistic teen bursting with scientific curiosity and a former boy-genius inventor jaded by disillusionment embark on a danger-filled mission to unearth the secrets of an enigmatic place somewhere in time and space that exists in their collective memory as \"Tomorrowland.\"', 'action, adventure, family', 'Chappie'),
