@@ -1,6 +1,6 @@
 # Netmovies
 It is a small school project who doing with a group of three for a WEB TECHNOLOGIES exam at university.
-Made using the following technologies: PHP,JS,HTML,CSS and a little jquery
+Made using the following technologies: PHP,JS,HTML,CSS and a little jquery.<br>
 The project is on a movies site(like netflix), we try to make the site as much accessible as we can to all users.<br>
 <br><b> -Homepage </b><br>
 ![Alt text](https://github.com/ElMurte/ImagesPresentation/blob/master/home.PNG?raw=true "Home")<br>
